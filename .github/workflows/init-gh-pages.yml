@@ -23,9 +23,9 @@ jobs:
       - name: Create empty Helm index
         run: |
           mkdir -p _site/crds
-          REPO_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)/"
-          helm repo index _site/ --url "$REPO_URL"
+          helm repo index _site/ --url "https://helm.kubentic.ai/"
           cp helm/crds/kubenticagents.yaml _site/crds/crds.yaml
+          echo "helm.kubentic.ai" > _site/CNAME
 
       - name: Push to gh-pages
         run: |
@@ -34,6 +34,6 @@ jobs:
           git checkout --orphan gh-pages
           git rm -rf . --quiet
           cp -r _site/. .
-          git add index.yaml crds/
+          git add index.yaml crds/ CNAME
           git commit -m "Initialize Helm repository"
           git push origin gh-pages --force

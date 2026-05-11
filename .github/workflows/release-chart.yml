@@ -52,18 +52,18 @@ jobs:
 
       - name: Update Helm index
         run: |
-          REPO_URL="https://${GITHUB_REPOSITORY_OWNER}.github.io/$(echo $GITHUB_REPOSITORY | cut -d'/' -f2)/"
           cp dist/*.tgz gh-pages/
           if [ -f gh-pages/index.yaml ]; then
-            helm repo index gh-pages/ --url "$REPO_URL" --merge gh-pages/index.yaml
+            helm repo index gh-pages/ --url "https://helm.kubentic.ai/" --merge gh-pages/index.yaml
           else
-            helm repo index gh-pages/ --url "$REPO_URL"
+            helm repo index gh-pages/ --url "https://helm.kubentic.ai/"
           fi
 
-      - name: Publish CRDs
+      - name: Publish CRDs and CNAME
         run: |
           mkdir -p gh-pages/crds
           cp helm/crds/kubenticagents.yaml gh-pages/crds/crds.yaml
+          echo "helm.kubentic.ai" > gh-pages/CNAME
 
       - name: Commit and push gh-pages
         run: |
