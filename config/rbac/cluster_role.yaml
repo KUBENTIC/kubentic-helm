@@ -1,0 +1,38 @@
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  name: kubentic-operator-manager
+  labels:
+    app.kubernetes.io/name: kubentic-operator
+    app.kubernetes.io/component: operator
+rules:
+  # Manage the KubenticAgent CRD objects and their status.
+  - apiGroups: ["kubentic.io"]
+    resources: ["kubenticagents"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+  - apiGroups: ["kubentic.io"]
+    resources: ["kubenticagents/status"]
+    verbs: ["get", "update", "patch"]
+  - apiGroups: ["kubentic.io"]
+    resources: ["kubenticagents/finalizers"]
+    verbs: ["update"]
+
+  # Manage CronJobs in any namespace (so operator can create agent jobs anywhere).
+  - apiGroups: ["batch"]
+    resources: ["cronjobs", "jobs"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+  # Manage ServiceAccounts for the agent in any namespace.
+  - apiGroups: [""]
+    resources: ["serviceaccounts"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+  # Manage ClusterRoles and ClusterRoleBindings for the agent.
+  - apiGroups: ["rbac.authorization.k8s.io"]
+    resources: ["clusterroles", "clusterrolebindings"]
+    verbs: ["get", "list", "watch", "create", "update", "patch", "delete"]
+
+  # Emit events for debugging/observability.
+  - apiGroups: [""]
+    resources: ["events"]
+    verbs: ["create", "patch"]

@@ -1,0 +1,207 @@
+# ─── Subscription check ───────────────────────────────────────────────────────
+# Runs a pre-install/pre-upgrade Job to validate the access token against the
+# Kubentic backend. helm install aborts if validation fails.
+subscriptionCheck:
+  enabled: true
+  image: curlimages/curl:8.11.0
+  timeoutSeconds: 30
+
+# ─── Operator deployment ──────────────────────────────────────────────────────
+operator:
+  image:
+    repository: ghcr.io/kubentic/operator
+    tag: latest
+    pullPolicy: IfNotPresent
+  replicas: 1
+  leaderElection: true
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# ─── Namespace ────────────────────────────────────────────────────────────────
+namespace:
+  create: true
+  name: kubentic-foresight
+
+# ─── KubenticAgent CR ─────────────────────────────────────────────────────────
+agent:
+  # Set to false to skip creating the CR (deploy operator only).
+  create: true
+
+  # Your Kubentic access token.  Supply via --set or a separate Secret.
+  # Either provide accessToken.value (creates a Secret) or point to an
+  # existing Secret with accessToken.existingSecret + accessToken.existingKey.
+  accessToken:
+    value: ""               # set via --set agent.accessToken.value=TOKEN
+    existingSecret: ""      # name of a pre-existing Secret
+    existingKey: "token"    # key inside that Secret
+
+  schedule: "0 * * * *"
+  suspend: false
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  backoffLimit: 2
+
+  collection:
+    logs:
+      enabled: true
+      sinceHours: 3
+      concurrency: 10
+      maxTailLines: 30000
+      # Auto-computed from the bundled VictoriaLogs if left empty.
+      # Override if you bring your own VictoriaLogs instance.
+      victoriaLogsURL: ""
+      vlHistoryDays: 7
+      excludeNamespaces:
+        - kube-node-lease
+    metrics:
+      enabled: true
+      # Auto-computed from the bundled VictoriaMetrics if left empty.
+      # Override if you bring your own VictoriaMetrics instance.
+      victoriaMetricsURL: ""
+      rangeSeconds: 10800
+      step: "60s"
+
+  backend:
+    url: "https://pa.kubentic.ai:8443"
+    tlsSkipVerify: false
+    uploadMaxRetries: 3
+
+  createRbac: true
+
+  # Optional API key injected as API_KEY env var into every agent pod.
+  # Either provide apiKey.value (creates a Secret) or point to an existing
+  # Secret with apiKey.existingSecret + apiKey.existingKey.
+  apiKey:
+    value: ""               # set via --set agent.apiKey.value=KEY
+    existingSecret: ""      # name of a pre-existing Secret
+    existingKey: "key"      # key inside that Secret
+
+  agentImage:
+    repository: ghcr.io/kubentic/agent
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  resources:
+    requests:
+      cpu: 100m
+      memory: 128Mi
+    limits:
+      cpu: 500m
+      memory: 512Mi
+
+  nodeSelector: {}
+  tolerations: []
+  affinity: {}
+
+# ─── VictoriaMetrics k8s stack (bundled) ──────────────────────────────────────
+# Installs: VictoriaMetrics + VMUI + vmagent + node-exporter + kube-state-metrics + Grafana
+# Works on AWS / GKE / AKS / on-prem — uses cluster default storage class.
+# Access Grafana:  kubectl port-forward svc/kubentic-operator-grafana 3000:80 -n kubentic-foresight
+# Access VMUI:     kubectl port-forward svc/vmsingle-vmstack 8428:8428 -n kubentic-foresight
+victoria-metrics-k8s-stack:
+  # Fixed name so the VictoriaMetrics service URL is predictable regardless of release name.
+  # VM URL will always be: http://vmsingle-vmstack.<namespace>.svc:8428
+  fullnameOverride: "vmstack"
+
+  grafana:
+    enabled: true
+    adminPassword: "kubentic-admin"
+    service:
+      type: ClusterIP  # use port-forward or change to LoadBalancer for direct access
+
+  vmsingle:
+    enabled: true
+    spec:
+      retentionPeriod: "7d"
+      storage:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 10Gi
+        # storageClassName: ""  # empty = use cluster default (works on all clouds)
+        # Override per cloud:
+        #   AWS:    gp2 or gp3
+        #   GKE:    standard or premium-rwo
+        #   Azure:  managed-premium
+        #   On-prem: whatever your admin set up
+
+  vmagent:
+    enabled: true
+    spec:
+      scrapeInterval: 1m
+      selectAllByDefault: true
+
+  prometheus-node-exporter:
+    enabled: true
+    # GKE requires hostRootFsMount disabled — safe to leave false on all clouds
+    hostRootFsMount:
+      enabled: false
+
+  kube-state-metrics:
+    enabled: true
+
+  # Disable control-plane scrapers — managed by cloud providers, not accessible
+  kubeApiServer:
+    enabled: false
+  kubeControllerManager:
+    enabled: false
+  kubeScheduler:
+    enabled: false
+  kubeEtcd:
+    enabled: false
+  kubeProxy:
+    enabled: false
+
+  alertmanager:
+    enabled: false
+  vmalert:
+    enabled: false
+  defaultRules:
+    create: false
+
+# ─── Vector log shipper ───────────────────────────────────────────────────────
+# DaemonSet that ships pod logs from every node to the bundled VictoriaLogs.
+# Disable if you bring your own log shipper.
+logShipper:
+  enabled: true
+  image:
+    repository: timberio/vector
+    tag: "0.39.0-alpine"
+    pullPolicy: IfNotPresent
+  resources:
+    requests:
+      cpu: 50m
+      memory: 64Mi
+    limits:
+      cpu: 200m
+      memory: 256Mi
+  tolerations:
+    - operator: Exists
+  nodeSelector: {}
+
+# ─── VictoriaLogs (bundled) ───────────────────────────────────────────────────
+# Stores historical pod logs for restart history and ghost pod detection.
+# Access VMUI: kubectl port-forward svc/vlogs-server 9428:9428 -n kubentic-foresight
+victoria-logs-single:
+  # Fixed name so the VictoriaLogs URL is predictable regardless of release name.
+  # VL URL will always be: http://vlogs-server.<namespace>.svc:9428
+  fullnameOverride: "vlogs"
+
+  server:
+    retentionPeriod: "7d"
+    persistentVolume:
+      enabled: true
+      accessModes:
+        - ReadWriteOnce
+      size: 10Gi
+      # storageClassName: ""  # empty = use cluster default (works on all clouds)

@@ -1,0 +1,38 @@
+---
+# First create the Secret with your access token:
+#   kubectl create secret generic kubentic-token \
+#     --from-literal=token=YOUR_TOKEN_HERE \
+#     -n kubentic-system
+apiVersion: kubentic.io/v1alpha1
+kind: KubenticAgent
+metadata:
+  name: kubentic-agent
+  namespace: kubentic-system
+spec:
+  accessToken:
+    secretRef:
+      name: kubentic-token
+      key: token
+
+  # Run collection every hour.
+  schedule: "0 * * * *"
+
+  collection:
+    logs:
+      enabled: true
+      sinceHours: 3
+      concurrency: 10
+      excludeNamespaces:
+        - kube-node-lease
+    metrics:
+      enabled: false  # set true + victoriaMetricsURL if VictoriaMetrics is installed
+
+  backend:
+    url: "https://pa.kubentic.ai:8443"
+    uploadMaxRetries: 3
+
+  createRbac: true
+  concurrencyPolicy: Forbid
+  successfulJobsHistoryLimit: 3
+  failedJobsHistoryLimit: 3
+  backoffLimit: 2

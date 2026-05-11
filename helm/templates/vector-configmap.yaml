@@ -1,0 +1,41 @@
+{{- if .Values.logShipper.enabled }}
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: kubentic-vector-config
+  namespace: {{ include "kubentic-operator.namespace" . }}
+  labels:
+    {{- include "kubentic-operator.labels" . | nindent 4 }}
+data:
+  vector.yaml: |
+    data_dir: /vector-data-dir
+
+    sources:
+      kubernetes_logs:
+        type: kubernetes_logs
+
+    transforms:
+      add_stream_fields:
+        type: remap
+        inputs: ["kubernetes_logs"]
+        source: |-
+          .namespace = .kubernetes.pod_namespace ?? ""
+          .pod       = .kubernetes.pod_name ?? ""
+          .container = .kubernetes.container_name ?? ""
+          .node      = .kubernetes.pod_node_name ?? ""
+
+    sinks:
+      vlogs:
+        type: elasticsearch
+        inputs: ["add_stream_fields"]
+        endpoints:
+          - "{{ include "kubentic-operator.vlURL" . }}/insert/elasticsearch/"
+        mode: bulk
+        api_version: "v8"
+        compression: gzip
+        request:
+          headers:
+            VL-Stream-Fields: "pod,namespace,container,node"
+        healthcheck:
+          enabled: false
+{{- end }}

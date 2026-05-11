@@ -1,0 +1,70 @@
+{{- if .Values.agent.create }}
+apiVersion: kubentic.io/v1alpha1
+kind: KubenticAgent
+metadata:
+  name: kubentic-agent
+  namespace: {{ include "kubentic-operator.namespace" . }}
+  labels:
+    {{- include "kubentic-operator.labels" . | nindent 4 }}
+spec:
+  accessToken:
+    secretRef:
+      name: {{ include "kubentic-operator.tokenSecretName" . }}
+      key: {{ include "kubentic-operator.tokenSecretKey" . }}
+
+{{- if or .Values.agent.apiKey.existingSecret .Values.agent.apiKey.value }}
+  apiKey:
+    name: {{ .Values.agent.apiKey.existingSecret | default "kubentic-api-key" }}
+    key: {{ .Values.agent.apiKey.existingKey }}
+{{- end }}
+
+  schedule: {{ .Values.agent.schedule | quote }}
+  suspend: {{ .Values.agent.suspend }}
+  concurrencyPolicy: {{ .Values.agent.concurrencyPolicy }}
+  successfulJobsHistoryLimit: {{ .Values.agent.successfulJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.agent.failedJobsHistoryLimit }}
+  backoffLimit: {{ .Values.agent.backoffLimit }}
+  createRbac: {{ .Values.agent.createRbac }}
+
+  collection:
+    logs:
+      enabled: {{ .Values.agent.collection.logs.enabled }}
+      sinceHours: {{ .Values.agent.collection.logs.sinceHours }}
+      concurrency: {{ .Values.agent.collection.logs.concurrency }}
+      maxTailLines: {{ .Values.agent.collection.logs.maxTailLines }}
+      victoriaLogsURL: {{ include "kubentic-operator.vlURL" . | quote }}
+      vlHistoryDays: {{ .Values.agent.collection.logs.vlHistoryDays }}
+      {{- with .Values.agent.collection.logs.excludeNamespaces }}
+      excludeNamespaces:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    metrics:
+      enabled: {{ .Values.agent.collection.metrics.enabled }}
+      victoriaMetricsURL: {{ include "kubentic-operator.vmURL" . | quote }}
+      rangeSeconds: {{ .Values.agent.collection.metrics.rangeSeconds }}
+      step: {{ .Values.agent.collection.metrics.step | quote }}
+
+  backend:
+    url: {{ .Values.agent.backend.url | quote }}
+    tlsSkipVerify: {{ .Values.agent.backend.tlsSkipVerify }}
+    uploadMaxRetries: {{ .Values.agent.backend.uploadMaxRetries }}
+
+  agentOverride:
+    image:
+      name: "{{ .Values.agent.agentImage.repository }}:{{ .Values.agent.agentImage.tag }}"
+      pullPolicy: {{ .Values.agent.agentImage.pullPolicy }}
+    resources:
+      {{- toYaml .Values.agent.resources | nindent 6 }}
+    {{- with .Values.agent.nodeSelector }}
+    nodeSelector:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    {{- with .Values.agent.affinity }}
+    affinity:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+    {{- with .Values.agent.tolerations }}
+    tolerations:
+      {{- toYaml . | nindent 6 }}
+    {{- end }}
+{{- end }}

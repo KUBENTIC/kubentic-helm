@@ -1,0 +1,40 @@
+Kubentic Operator installed successfully in namespace: {{ include "kubentic-operator.namespace" . }}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+ACCESS DASHBOARDS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+VictoriaLogs VMUI (pod logs):
+  kubectl port-forward svc/vlogs-server 9428:9428 -n {{ include "kubentic-operator.namespace" . }}
+  Open: http://localhost:9428/select/vmui/
+
+VictoriaMetrics VMUI (cluster metrics):
+  kubectl port-forward svc/vmsingle-vmstack 8428:8428 -n {{ include "kubentic-operator.namespace" . }}
+  Open: http://localhost:8428/vmui/
+
+{{- if index .Values "victoria-metrics-k8s-stack" "grafana" "enabled" }}
+
+Grafana:
+  kubectl port-forward svc/kubentic-operator-vmstack-grafana 3000:80 -n {{ include "kubentic-operator.namespace" . }}
+  Open: http://localhost:3000  (admin / {{ index .Values "victoria-metrics-k8s-stack" "grafana" "adminPassword" }})
+{{- end }}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+CHECK STATUS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  kubectl get kubenticagent -n {{ include "kubentic-operator.namespace" . }}
+  kubectl get pods -n {{ include "kubentic-operator.namespace" . }}
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+TROUBLESHOOTING
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  # Operator logs
+  kubectl logs -n {{ include "kubentic-operator.namespace" . }} -l app.kubernetes.io/name=kubentic-operator --tail=50
+
+  # Vector log-shipper status (sends pod logs to VictoriaLogs)
+  kubectl logs -n {{ include "kubentic-operator.namespace" . }} -l app.kubernetes.io/name=kubentic-vector --tail=50
+
+  # Agent job history
+  kubectl get jobs -n {{ include "kubentic-operator.namespace" . }}

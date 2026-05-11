@@ -1,0 +1,304 @@
+---
+apiVersion: apiextensions.k8s.io/v1
+kind: CustomResourceDefinition
+metadata:
+  name: kubenticagents.kubentic.io
+  annotations:
+    controller-gen.kubebuilder.io/version: v0.16.0
+spec:
+  group: kubentic.io
+  names:
+    kind: KubenticAgent
+    listKind: KubenticAgentList
+    plural: kubenticagents
+    singular: kubenticagent
+    shortNames:
+      - ka
+  scope: Namespaced
+  versions:
+    - name: v1alpha1
+      served: true
+      storage: true
+      subresources:
+        status: {}
+      additionalPrinterColumns:
+        - name: Phase
+          type: string
+          jsonPath: .status.phase
+        - name: Schedule
+          type: string
+          jsonPath: .spec.schedule
+        - name: Last Scan
+          type: date
+          jsonPath: .status.lastScanTime
+        - name: Age
+          type: date
+          jsonPath: .metadata.creationTimestamp
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            apiVersion:
+              type: string
+            kind:
+              type: string
+            metadata:
+              type: object
+            spec:
+              type: object
+              required:
+                - accessToken
+              properties:
+                accessToken:
+                  type: object
+                  required:
+                    - secretRef
+                  properties:
+                    secretRef:
+                      type: object
+                      required:
+                        - name
+                        - key
+                      properties:
+                        name:
+                          type: string
+                        key:
+                          type: string
+                        optional:
+                          type: boolean
+                schedule:
+                  type: string
+                  default: "0 * * * *"
+                  description: "Cron expression for the collection job (e.g. '0 * * * *' for hourly)."
+                suspend:
+                  type: boolean
+                  default: false
+                createRbac:
+                  type: boolean
+                  default: true
+                serviceAccountName:
+                  type: string
+                concurrencyPolicy:
+                  type: string
+                  default: Forbid
+                  enum:
+                    - Allow
+                    - Forbid
+                    - Replace
+                successfulJobsHistoryLimit:
+                  type: integer
+                  default: 3
+                  minimum: 0
+                  maximum: 10
+                failedJobsHistoryLimit:
+                  type: integer
+                  default: 3
+                  minimum: 0
+                  maximum: 10
+                backoffLimit:
+                  type: integer
+                  default: 2
+                  minimum: 0
+                activeDeadlineSeconds:
+                  type: integer
+                  format: int64
+                  minimum: 60
+                collection:
+                  type: object
+                  properties:
+                    logs:
+                      type: object
+                      properties:
+                        enabled:
+                          type: boolean
+                          default: true
+                        sinceHours:
+                          type: integer
+                          default: 3
+                          minimum: 1
+                          maximum: 168
+                        maxBytesPerPod:
+                          type: integer
+                          format: int64
+                          default: 0
+                        concurrency:
+                          type: integer
+                          default: 10
+                          minimum: 1
+                          maximum: 50
+                        excludeNamespaces:
+                          type: array
+                          items:
+                            type: string
+                        namespaceSelector:
+                          type: object
+                          properties:
+                            matchLabels:
+                              type: object
+                              additionalProperties:
+                                type: string
+                            matchExpressions:
+                              type: array
+                              items:
+                                type: object
+                                properties:
+                                  key:
+                                    type: string
+                                  operator:
+                                    type: string
+                                  values:
+                                    type: array
+                                    items:
+                                      type: string
+                    metrics:
+                      type: object
+                      properties:
+                        enabled:
+                          type: boolean
+                          default: false
+                        victoriaMetricsURL:
+                          type: string
+                        rangeSeconds:
+                          type: integer
+                          default: 10800
+                          minimum: 60
+                        stepSeconds:
+                          type: integer
+                          default: 60
+                          minimum: 15
+                backend:
+                  type: object
+                  properties:
+                    url:
+                      type: string
+                      default: "https://pa.kubentic.ai:8443"
+                    tlsSkipVerify:
+                      type: boolean
+                      default: false
+                    uploadMaxRetries:
+                      type: integer
+                      default: 3
+                      minimum: 1
+                      maximum: 10
+                agentOverride:
+                  type: object
+                  properties:
+                    image:
+                      type: object
+                      required:
+                        - name
+                      properties:
+                        name:
+                          type: string
+                          minLength: 1
+                        pullPolicy:
+                          type: string
+                          enum:
+                            - Always
+                            - Never
+                            - IfNotPresent
+                        pullSecrets:
+                          type: array
+                          items:
+                            type: object
+                            properties:
+                              name:
+                                type: string
+                    resources:
+                      type: object
+                      properties:
+                        requests:
+                          type: object
+                          additionalProperties:
+                            anyOf:
+                              - type: integer
+                              - type: string
+                        limits:
+                          type: object
+                          additionalProperties:
+                            anyOf:
+                              - type: integer
+                              - type: string
+                    env:
+                      type: array
+                      items:
+                        type: object
+                        required:
+                          - name
+                        properties:
+                          name:
+                            type: string
+                          value:
+                            type: string
+                          valueFrom:
+                            type: object
+                            x-kubernetes-preserve-unknown-fields: true
+                    annotations:
+                      type: object
+                      additionalProperties:
+                        type: string
+                    nodeSelector:
+                      type: object
+                      additionalProperties:
+                        type: string
+                    affinity:
+                      type: object
+                      x-kubernetes-preserve-unknown-fields: true
+                    tolerations:
+                      type: array
+                      items:
+                        type: object
+                        x-kubernetes-preserve-unknown-fields: true
+            status:
+              type: object
+              properties:
+                phase:
+                  type: string
+                  enum:
+                    - Pending
+                    - Running
+                    - Succeeded
+                    - Failed
+                    - Suspended
+                lastScanTime:
+                  type: string
+                  format: date-time
+                nextScanTime:
+                  type: string
+                  format: date-time
+                agentVersion:
+                  type: string
+                cronJobName:
+                  type: string
+                observedGeneration:
+                  type: integer
+                  format: int64
+                conditions:
+                  type: array
+                  items:
+                    type: object
+                    required:
+                      - lastTransitionTime
+                      - message
+                      - reason
+                      - status
+                      - type
+                    properties:
+                      lastTransitionTime:
+                        type: string
+                        format: date-time
+                      message:
+                        type: string
+                      observedGeneration:
+                        type: integer
+                        format: int64
+                      reason:
+                        type: string
+                      status:
+                        type: string
+                        enum:
+                          - "True"
+                          - "False"
+                          - Unknown
+                      type:
+                        type: string
