@@ -1,3 +1,31 @@
 apiVersion: v1
-entries: {}
-generated: "2026-05-11T11:24:57.484493772Z"
+entries:
+  kubentic-operator:
+  - apiVersion: v2
+    appVersion: 0.1.2
+    created: "2026-05-13T13:01:21.148466361Z"
+    dependencies:
+    - name: victoria-metrics-k8s-stack
+      repository: https://victoriametrics.github.io/helm-charts/
+      version: '>=0.19.0'
+    - name: victoria-logs-single
+      repository: https://victoriametrics.github.io/helm-charts/
+      version: '>=0.5.0'
+    description: Kubernetes operator that manages Kubentic log and metrics collection
+      agents.
+    digest: 2af18d0bdf7423c144e975fc6a7bb6426330eb112279dbe95e9560829acde277
+    home: https://kubentic.ai
+    keywords:
+    - kubentic
+    - observability
+    - log-collection
+    - operator
+    maintainers:
+    - email: dev_ai@kodexolabs.com
+      name: Kubentic
+    name: kubentic-operator
+    type: application
+    urls:
+    - https://helm.kubentic.ai/kubentic-operator-0.1.2.tgz
+    version: 0.1.2
+generated: "2026-05-13T13:01:21.125172177Z"
