@@ -2,6 +2,8 @@
 ---
 # Pre-install/pre-upgrade Job that validates the access token against the Kubentic
 # backend before any cluster resources are created. helm install aborts if this fails.
+# On success it stores the api_key returned by the backend as a K8s Secret so the
+# agent CronJob can use it as KUBENTIC_ACCESS_TOKEN at runtime.
 apiVersion: batch/v1
 kind: Job
 metadata:
@@ -22,6 +24,7 @@ spec:
         app.kubernetes.io/name: kubentic-subscription-check
     spec:
       restartPolicy: Never
+      serviceAccountName: kubentic-hook
       securityContext:
         runAsNonRoot: true
         runAsUser: 1000
@@ -31,32 +34,49 @@ spec:
           imagePullPolicy: IfNotPresent
           securityContext:
             allowPrivilegeEscalation: false
-            readOnlyRootFilesystem: true
             capabilities:
               drop: ["ALL"]
           command: ["/bin/sh", "-ec"]
           args:
             - |
               echo "Validating Kubentic subscription..."
-              code=$(curl -sf \
-                -o /dev/null \
-                -w "%{http_code}" \
+
+              response=$(curl -s \
                 --max-time {{ .Values.subscriptionCheck.timeoutSeconds }} \
                 {{- if .Values.agent.backend.tlsSkipVerify }}
                 -k \
                 {{- end }}
                 -H "Authorization: Bearer ${KUBENTIC_ACCESS_TOKEN}" \
-                {{ .Values.agent.backend.url }}/pa/validate 2>&1)
-              if [ "$code" = "200" ]; then
-                echo "Subscription active — proceeding with installation."
-                exit 0
+                -w "\n__STATUS__%{http_code}" \
+                {{ .Values.subscriptionCheck.validateUrl }})
+
+              code=$(printf '%s' "$response" | grep '__STATUS__' | sed 's/__STATUS__//')
+              body=$(printf '%s' "$response" | grep -v '__STATUS__')
+
+              if [ "$code" != "200" ]; then
+                echo ""
+                echo "ERROR: Subscription validation failed (HTTP $code)."
+                echo "  • Verify your access token is correct."
+                echo "  • Check your subscription at https://kubentic.ai"
+                echo "  • Validate URL: {{ .Values.subscriptionCheck.validateUrl }}"
+                exit 1
               fi
-              echo ""
-              echo "ERROR: Subscription validation failed (HTTP $code)."
-              echo "  • Verify your access token is correct."
-              echo "  • Check your subscription at https://kubentic.ai"
-              echo "  • Backend URL: {{ .Values.agent.backend.url }}"
-              exit 1
+
+              api_key=$(printf '%s' "$body" | grep -o '"api_key":"[^"]*"' | cut -d'"' -f4)
+
+              if [ -z "$api_key" ]; then
+                echo "ERROR: Validation succeeded but no api_key in response."
+                exit 1
+              fi
+
+              echo "Subscription active. Storing API key..."
+
+              kubectl create secret generic kubentic-apikey \
+                --namespace={{ include "kubentic-operator.namespace" . }} \
+                --from-literal=api-key="$api_key" \
+                --dry-run=client -o yaml | kubectl apply -f -
+
+              echo "Done — proceeding with installation."
           env:
             - name: KUBENTIC_ACCESS_TOKEN
               {{- if .Values.agent.accessToken.existingSecret }}

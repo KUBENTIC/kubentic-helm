@@ -24,12 +24,14 @@ Namespace helper.
 
 {{/*
 Access token secret name.
+Points to kubentic-apikey (created by the pre-install hook from the backend response).
+existingSecret overrides this for users who manage their own secret.
 */}}
 {{- define "kubentic-operator.tokenSecretName" -}}
 {{- if .Values.agent.accessToken.existingSecret -}}
 {{- .Values.agent.accessToken.existingSecret -}}
 {{- else -}}
-kubentic-token
+kubentic-apikey
 {{- end -}}
 {{- end }}
 
@@ -37,7 +39,11 @@ kubentic-token
 Access token secret key.
 */}}
 {{- define "kubentic-operator.tokenSecretKey" -}}
+{{- if .Values.agent.accessToken.existingSecret -}}
 {{- .Values.agent.accessToken.existingKey | default "token" -}}
+{{- else -}}
+api-key
+{{- end -}}
 {{- end }}
 
 {{/*

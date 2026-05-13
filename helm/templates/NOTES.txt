@@ -4,19 +4,21 @@ Kubentic Operator installed successfully in namespace: {{ include "kubentic-oper
 ACCESS DASHBOARDS
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+Run the following to get external IPs (may take ~60s on first install):
+
+  kubectl get svc -n {{ include "kubentic-operator.namespace" . }} \
+    kubentic-grafana vlogs-server vmsingle-vmstack-additional-service
+
 VictoriaLogs VMUI (pod logs):
-  kubectl port-forward svc/vlogs-server 9428:9428 -n {{ include "kubentic-operator.namespace" . }}
-  Open: http://localhost:9428/select/vmui/
+  http://<vlogs-server EXTERNAL-IP>:9428/select/vmui/
 
 VictoriaMetrics VMUI (cluster metrics):
-  kubectl port-forward svc/vmsingle-vmstack 8428:8428 -n {{ include "kubentic-operator.namespace" . }}
-  Open: http://localhost:8428/vmui/
+  http://<vmsingle-vmstack-additional-service EXTERNAL-IP>:8428/vmui/
 
 {{- if index .Values "victoria-metrics-k8s-stack" "grafana" "enabled" }}
 
 Grafana:
-  kubectl port-forward svc/kubentic-operator-vmstack-grafana 3000:80 -n {{ include "kubentic-operator.namespace" . }}
-  Open: http://localhost:3000  (admin / {{ index .Values "victoria-metrics-k8s-stack" "grafana" "adminPassword" }})
+  http://<kubentic-grafana EXTERNAL-IP>  (admin / {{ index .Values "victoria-metrics-k8s-stack" "grafana" "adminPassword" }})
 {{- end }}
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━

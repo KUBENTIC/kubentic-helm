@@ -19,10 +19,10 @@ data:
         type: remap
         inputs: ["kubernetes_logs"]
         source: |-
-          .namespace = .kubernetes.pod_namespace ?? ""
-          .pod       = .kubernetes.pod_name ?? ""
-          .container = .kubernetes.container_name ?? ""
-          .node      = .kubernetes.pod_node_name ?? ""
+          .namespace = to_string(.kubernetes.pod_namespace) ?? ""
+          .pod       = to_string(.kubernetes.pod_name) ?? ""
+          .container = to_string(.kubernetes.container_name) ?? ""
+          .node      = to_string(.kubernetes.pod_node_name) ?? ""
 
     sinks:
       vlogs:

@@ -3,8 +3,9 @@
 # Kubentic backend. helm install aborts if validation fails.
 subscriptionCheck:
   enabled: true
-  image: curlimages/curl:8.11.0
+  image: bitnami/kubectl:latest
   timeoutSeconds: 30
+  validateUrl: "https://api.kubentic.ai/api/v1/auth/validate-foresight"
 
 # ─── Operator deployment ──────────────────────────────────────────────────────
 operator:
@@ -112,16 +113,25 @@ victoria-metrics-k8s-stack:
   # VM URL will always be: http://vmsingle-vmstack.<namespace>.svc:8428
   fullnameOverride: "vmstack"
 
+  victoria-metrics-operator:
+    operator:
+      # Cluster has no Prometheus Operator CRDs (monitoring.coreos.com); disabling
+      # the converter prevents the VM operator from crashing on missing ServiceMonitor CRD.
+      disable_prometheus_converter: true
+
   grafana:
     enabled: true
     adminPassword: "kubentic-admin"
     service:
-      type: ClusterIP  # use port-forward or change to LoadBalancer for direct access
+      type: LoadBalancer
 
   vmsingle:
     enabled: true
     spec:
       retentionPeriod: "7d"
+      serviceSpec:
+        spec:
+          type: LoadBalancer
       storage:
         accessModes:
           - ReadWriteOnce
@@ -197,7 +207,12 @@ victoria-logs-single:
   # VL URL will always be: http://vlogs-server.<namespace>.svc:9428
   fullnameOverride: "vlogs"
 
+  service:
+    clusterIP: ""   # clear headless default so LoadBalancer gets an IP
+
   server:
+    service:
+      type: LoadBalancer
     retentionPeriod: "7d"
     persistentVolume:
       enabled: true

@@ -1,0 +1,50 @@
+{{- if and .Values.subscriptionCheck.enabled .Values.agent.create }}
+---
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: kubentic-hook
+  namespace: {{ include "kubentic-operator.namespace" . }}
+  labels:
+    {{- include "kubentic-operator.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: Role
+metadata:
+  name: kubentic-hook
+  namespace: {{ include "kubentic-operator.namespace" . }}
+  labels:
+    {{- include "kubentic-operator.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+rules:
+  - apiGroups: [""]
+    resources: ["secrets"]
+    verbs: ["create", "update", "patch", "apply"]
+---
+apiVersion: rbac.authorization.k8s.io/v1
+kind: RoleBinding
+metadata:
+  name: kubentic-hook
+  namespace: {{ include "kubentic-operator.namespace" . }}
+  labels:
+    {{- include "kubentic-operator.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": pre-install,pre-upgrade
+    "helm.sh/hook-weight": "-5"
+    "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded
+roleRef:
+  apiGroup: rbac.authorization.k8s.io
+  kind: Role
+  name: kubentic-hook
+subjects:
+  - kind: ServiceAccount
+    name: kubentic-hook
+    namespace: {{ include "kubentic-operator.namespace" . }}
+{{- end }}
