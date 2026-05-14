@@ -2,8 +2,35 @@ apiVersion: v1
 entries:
   kubentic-operator:
   - apiVersion: v2
+    appVersion: 0.2.0
+    created: "2026-05-14T14:03:01.69762446Z"
+    dependencies:
+    - name: victoria-metrics-k8s-stack
+      repository: https://victoriametrics.github.io/helm-charts/
+      version: '>=0.19.0'
+    - name: victoria-logs-single
+      repository: https://victoriametrics.github.io/helm-charts/
+      version: '>=0.5.0'
+    description: Kubernetes operator that manages Kubentic log and metrics collection
+      agents.
+    digest: 2b84e21b9a3abd41330d9e340878b2669594da3866fae4ea2d5edc21a65a2dd4
+    home: https://kubentic.ai
+    keywords:
+    - kubentic
+    - observability
+    - log-collection
+    - operator
+    maintainers:
+    - email: dev_ai@kodexolabs.com
+      name: Kubentic
+    name: kubentic-operator
+    type: application
+    urls:
+    - https://helm.kubentic.ai/kubentic-operator-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 0.1.9
-    created: "2026-05-14T12:48:28.153429009Z"
+    created: "2026-05-14T14:03:01.673788724Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -30,7 +57,7 @@ entries:
     version: 0.1.9
   - apiVersion: v2
     appVersion: 0.1.8
-    created: "2026-05-14T12:48:28.130348451Z"
+    created: "2026-05-14T14:03:01.646551571Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -57,7 +84,7 @@ entries:
     version: 0.1.8
   - apiVersion: v2
     appVersion: 0.1.7
-    created: "2026-05-14T12:48:28.105777911Z"
+    created: "2026-05-14T14:03:01.618477592Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -84,7 +111,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 0.1.6
-    created: "2026-05-14T12:48:28.081243639Z"
+    created: "2026-05-14T14:03:01.59683228Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -111,7 +138,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 0.1.5
-    created: "2026-05-14T12:48:28.05763665Z"
+    created: "2026-05-14T14:03:01.574458276Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -138,7 +165,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 0.1.4
-    created: "2026-05-14T12:48:28.033808107Z"
+    created: "2026-05-14T14:03:01.549999947Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -165,7 +192,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 0.1.3
-    created: "2026-05-14T12:48:28.009367075Z"
+    created: "2026-05-14T14:03:01.525660648Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -192,7 +219,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 0.1.2
-    created: "2026-05-14T12:48:27.98606673Z"
+    created: "2026-05-14T14:03:01.503409573Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -217,4 +244,4 @@ entries:
     urls:
     - https://helm.kubentic.ai/kubentic-operator-0.1.2.tgz
     version: 0.1.2
-generated: "2026-05-14T12:48:27.961438762Z"
+generated: "2026-05-14T14:03:01.480352505Z"
