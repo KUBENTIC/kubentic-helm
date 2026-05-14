@@ -3,7 +3,7 @@
 # Kubentic backend. helm install aborts if validation fails.
 subscriptionCheck:
   enabled: true
-  image: curlimages/curl:8.11.1
+  image: ghcr.io/kubentic/subscription-check:latest
   timeoutSeconds: 30
   validateUrl: "https://api.kubentic.ai/api/v1/auth/validate-foresight"
 

@@ -23,6 +23,10 @@ jobs:
             dockerfile: agent/Dockerfile
             context: agent
             image: ghcr.io/kubentic/agent
+          - name: subscription-check
+            dockerfile: subscription-check/Dockerfile
+            context: subscription-check
+            image: ghcr.io/kubentic/subscription-check
 
     steps:
       - name: Checkout
