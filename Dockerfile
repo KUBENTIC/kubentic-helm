@@ -1,5 +1,7 @@
 # Build stage
-FROM golang:1.22-alpine AS builder
+FROM --platform=$BUILDPLATFORM golang:1.22-alpine AS builder
+ARG TARGETOS
+ARG TARGETARCH
 WORKDIR /workspace
 
 COPY go.mod go.sum ./
@@ -9,7 +11,7 @@ COPY api/ api/
 COPY cmd/ cmd/
 COPY internal/ internal/
 
-RUN CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build \
+RUN CGO_ENABLED=0 GOOS=${TARGETOS} GOARCH=${TARGETARCH} go build \
     -ldflags="-s -w" \
     -o manager \
     ./cmd/main.go
