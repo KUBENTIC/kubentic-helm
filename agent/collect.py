@@ -684,11 +684,9 @@ async def zip_and_upload(meta_path: Optional[Path] = None):
             async with aiohttp.ClientSession(connector=connector, timeout=aiohttp.ClientTimeout(total=600)) as session:
                 with open(zip_path, "rb") as fh:
                     form = aiohttp.FormData()
+                    form.add_field("api_key", KUBENTIC_TOKEN)
                     form.add_field("file", fh, filename="k8s_logs_metrics.zip", content_type="application/zip")
-                    async with session.post(
-                        ENDPOINT, data=form,
-                        headers={"Authorization": f"Bearer {KUBENTIC_TOKEN}"},
-                    ) as resp:
+                    async with session.post(ENDPOINT, data=form) as resp:
                         body = await resp.text()
                         if resp.status < 400:
                             log.info("Upload succeeded (attempt %d) — HTTP %d", attempt, resp.status)
