@@ -17,6 +17,7 @@ metadata:
     "helm.sh/hook-delete-policy": before-hook-creation,hook-succeeded,hook-failed
 spec:
   backoffLimit: 0
+  activeDeadlineSeconds: 120
   template:
     metadata:
       labels:
@@ -70,10 +71,33 @@ spec:
 
               echo "Subscription active. Storing API key..."
 
-              kubectl create secret generic kubentic-apikey \
-                --namespace={{ include "kubentic-operator.namespace" . }} \
-                --from-literal=api-key="$api_key" \
-                --dry-run=client -o yaml | kubectl apply -f -
+              K8S="https://kubernetes.default.svc"
+              SA_TOKEN=$(cat /var/run/secrets/kubernetes.io/serviceaccount/token)
+              CACERT="/var/run/secrets/kubernetes.io/serviceaccount/ca.crt"
+              NS="{{ include "kubentic-operator.namespace" . }}"
+
+              SECRET_JSON=$(printf '{"apiVersion":"v1","kind":"Secret","metadata":{"name":"kubentic-apikey","namespace":"%s"},"stringData":{"api-key":"%s"}}' "$NS" "$api_key")
+
+              http_code=$(curl -s -o /dev/null -w "%{http_code}" \
+                --cacert "$CACERT" \
+                -H "Authorization: Bearer $SA_TOKEN" \
+                -H "Content-Type: application/json" \
+                -X POST \
+                "${K8S}/api/v1/namespaces/${NS}/secrets" \
+                -d "$SECRET_JSON")
+
+              if [ "$http_code" = "409" ]; then
+                curl -s -o /dev/null \
+                  --cacert "$CACERT" \
+                  -H "Authorization: Bearer $SA_TOKEN" \
+                  -H "Content-Type: application/merge-patch+json" \
+                  -X PATCH \
+                  "${K8S}/api/v1/namespaces/${NS}/secrets/kubentic-apikey" \
+                  -d "$SECRET_JSON"
+              elif [ "$http_code" != "201" ]; then
+                echo "ERROR: Failed to store API key (HTTP $http_code)."
+                exit 1
+              fi
 
               echo "Done — proceeding with installation."
           env:
