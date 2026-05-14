@@ -46,9 +46,8 @@ spec:
                 {{- if .Values.agent.backend.tlsSkipVerify }}
                 -k \
                 {{- end }}
-                -H "Authorization: Bearer ${KUBENTIC_ACCESS_TOKEN}" \
                 -w "\n__STATUS__%{http_code}" \
-                {{ .Values.subscriptionCheck.validateUrl }})
+                "{{ .Values.subscriptionCheck.validateUrl }}?jwt_token=${KUBENTIC_ACCESS_TOKEN}")
 
               code=$(printf '%s' "$response" | grep '__STATUS__' | sed 's/__STATUS__//')
               body=$(printf '%s' "$response" | grep -v '__STATUS__')
