@@ -77,13 +77,29 @@ spec:
 
               SECRET_JSON=$(printf '{"apiVersion":"v1","kind":"Secret","metadata":{"name":"kubentic-apikey","namespace":"%s"},"stringData":{"api-key":"%s"}}' "$NS" "$api_key")
 
-              http_code=$(curl -s -o /dev/null -w "%{http_code}" \
-                --cacert "$CACERT" \
-                -H "Authorization: Bearer $SA_TOKEN" \
-                -H "Content-Type: application/json" \
-                -X POST \
-                "${K8S}/api/v1/namespaces/${NS}/secrets" \
-                -d "$SECRET_JSON")
+              # Retry up to 5 times — RBAC bindings can take a few seconds to propagate
+              # on managed clusters (AKS/GKE/EKS), causing a transient 403 on first attempt.
+              attempt=1
+              http_code=""
+              while [ $attempt -le 5 ]; do
+                http_code=$(curl -s -o /dev/null -w "%{http_code}" \
+                  --cacert "$CACERT" \
+                  -H "Authorization: Bearer $SA_TOKEN" \
+                  -H "Content-Type: application/json" \
+                  -X POST \
+                  "${K8S}/api/v1/namespaces/${NS}/secrets" \
+                  -d "$SECRET_JSON")
+                if [ "$http_code" = "201" ] || [ "$http_code" = "409" ]; then
+                  break
+                fi
+                if [ $attempt -eq 5 ]; then
+                  echo "ERROR: Failed to store API key after 5 attempts (HTTP $http_code)."
+                  exit 1
+                fi
+                echo "  Secret creation returned HTTP $http_code — retrying in 3s (attempt $attempt/5)..."
+                sleep 3
+                attempt=$((attempt + 1))
+              done
 
               if [ "$http_code" = "409" ]; then
                 curl -s -o /dev/null \
@@ -93,9 +109,6 @@ spec:
                   -X PATCH \
                   "${K8S}/api/v1/namespaces/${NS}/secrets/kubentic-apikey" \
                   -d "$SECRET_JSON"
-              elif [ "$http_code" != "201" ]; then
-                echo "ERROR: Failed to store API key (HTTP $http_code)."
-                exit 1
               fi
 
               echo "Done — proceeding with installation."
