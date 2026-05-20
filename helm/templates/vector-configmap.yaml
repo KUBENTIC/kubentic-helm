@@ -23,19 +23,25 @@ data:
           .pod       = to_string(.kubernetes.pod_name) ?? ""
           .container = to_string(.kubernetes.container_name) ?? ""
           .node      = to_string(.kubernetes.pod_node_name) ?? ""
+          ._msg      = to_string(.message) ?? ""
+          ._time     = to_string(.timestamp) ?? ""
+          del(.message)
+          del(.timestamp)
 
     sinks:
       vlogs:
         type: elasticsearch
         inputs: ["add_stream_fields"]
         endpoints:
-          - "{{ include "kubentic-operator.vlURL" . }}/insert/elasticsearch/"
+          - "{{ include "kubentic-operator.vlURL" . }}/insert/elasticsearch"
         mode: bulk
         api_version: "v8"
         compression: gzip
         request:
           headers:
             VL-Stream-Fields: "pod,namespace,container,node"
+            VL-Msg-Field: "message,_msg"
+            VL-Time-Field: "timestamp,_time"
         healthcheck:
           enabled: false
 {{- end }}
