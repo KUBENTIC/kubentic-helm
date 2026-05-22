@@ -21,7 +21,6 @@ Environment variables (injected by the operator):
   KUBENTIC_ACCESS_TOKEN   — required, bearer token for the backend
   KUBENTIC_BACKEND_URL    — default https://pa.kubentic.ai:8443
   TLS_SKIP_VERIFY         — "true" to skip TLS verification (dev only)
-  UPLOAD_MAX_RETRIES      — integer, default 3
   COLLECT_LOGS            — "true"/"false", default true
   LOG_SINCE_HOURS         — hours to look back, default 3
   LOG_CONCURRENCY         — parallel K8s API calls, default 10
@@ -62,7 +61,6 @@ KUBENTIC_TOKEN    = os.environ["KUBENTIC_ACCESS_TOKEN"]
 _BACKEND_BASE     = os.environ.get("KUBENTIC_BACKEND_URL", "https://pa.kubentic.ai:8443").rstrip("/")
 ENDPOINT          = f"{_BACKEND_BASE}/pa/call"
 TLS_SKIP_VERIFY   = os.environ.get("TLS_SKIP_VERIFY", "false").lower() == "true"
-UPLOAD_MAX_RETRIES = int(os.environ.get("UPLOAD_MAX_RETRIES", "3"))
 
 COLLECT_LOGS      = os.environ.get("COLLECT_LOGS", "true").lower() == "true"
 LOG_SINCE_HOURS   = int(os.environ.get("LOG_SINCE_HOURS", "3"))
@@ -678,30 +676,25 @@ async def zip_and_upload(meta_path: Optional[Path] = None):
         ssl_ctx.check_hostname = False
         ssl_ctx.verify_mode = ssl.CERT_NONE
 
-    for attempt in range(1, UPLOAD_MAX_RETRIES + 1):
-        try:
-            connector = aiohttp.TCPConnector(ssl=ssl_ctx)
-            async with aiohttp.ClientSession(connector=connector, timeout=aiohttp.ClientTimeout(total=600)) as session:
-                with open(zip_path, "rb") as fh:
-                    form = aiohttp.FormData()
-                    form.add_field("api_key", KUBENTIC_TOKEN)
-                    form.add_field("file", fh, filename="k8s_logs_metrics.zip", content_type="application/zip")
-                    async with session.post(ENDPOINT, data=form) as resp:
-                        body = await resp.text()
-                        if resp.status < 400:
-                            log.info("Upload succeeded (attempt %d) — HTTP %d", attempt, resp.status)
-                            return
-                        log.error("Upload failed HTTP %d: %s (attempt %d/%d)",
-                                  resp.status, body[:200], attempt, UPLOAD_MAX_RETRIES)
-        except Exception as e:
-            log.error("Upload error (attempt %d/%d): %s", attempt, UPLOAD_MAX_RETRIES, e)
-
-        if attempt < UPLOAD_MAX_RETRIES:
-            wait = 2 ** attempt + random.uniform(0, 1)
-            log.info("Retrying in %.1fs...", wait)
-            await asyncio.sleep(wait)
-
-    raise RuntimeError(f"Upload failed after {UPLOAD_MAX_RETRIES} attempts")
+    try:
+        connector = aiohttp.TCPConnector(ssl=ssl_ctx)
+        async with aiohttp.ClientSession(connector=connector, timeout=aiohttp.ClientTimeout(total=600)) as session:
+            with open(zip_path, "rb") as fh:
+                form = aiohttp.FormData()
+                form.add_field("api_key", KUBENTIC_TOKEN)
+                form.add_field("file", fh, filename="k8s_logs_metrics.zip", content_type="application/zip")
+                async with session.post(ENDPOINT, data=form) as resp:
+                    body = await resp.text()
+                    if resp.status < 400:
+                        log.info("Upload succeeded — HTTP %d", resp.status)
+                        return
+                    log.error("Upload failed HTTP %d: %s", resp.status, body[:200])
+                    raise RuntimeError(f"Upload failed: HTTP {resp.status}")
+    except Exception as e:
+        log.error("Upload error: %s", e)
+        if isinstance(e, RuntimeError):
+            raise
+        raise RuntimeError(f"Upload failed: {e}") from e
 
 
 # ─── Main ─────────────────────────────────────────────────────────────────────
