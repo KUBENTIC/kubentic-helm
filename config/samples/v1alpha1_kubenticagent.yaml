@@ -35,4 +35,5 @@ spec:
   concurrencyPolicy: Forbid
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
-  backoffLimit: 2
+  backoffLimit: 0
+  activeDeadlineSeconds: 1800

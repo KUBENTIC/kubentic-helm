@@ -49,7 +49,12 @@ agent:
   concurrencyPolicy: Forbid
   successfulJobsHistoryLimit: 3
   failedJobsHistoryLimit: 3
-  backoffLimit: 2
+  # 0 = attempt each collection exactly once; on failure wait for the next
+  # schedule rather than retrying (which would re-upload the same bundle).
+  backoffLimit: 0
+  # Hard cap (seconds) on how long a Job may stay active, including Pending time.
+  # Prevents an unschedulable/hung pod from blocking all future runs under Forbid.
+  activeDeadlineSeconds: 1800
 
   collection:
     logs:

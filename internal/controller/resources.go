@@ -163,9 +163,18 @@ func buildCronJob(agent *kubenticv1alpha1.KubenticAgent) *batchv1.CronJob {
 	if agent.Spec.FailedJobsHistoryLimit != nil {
 		failedLimit = *agent.Spec.FailedJobsHistoryLimit
 	}
-	backoffLimit := int32(2)
+	backoffLimit := int32(0)
 	if agent.Spec.BackoffLimit != nil {
 		backoffLimit = *agent.Spec.BackoffLimit
+	}
+
+	// activeDeadline caps the total time a collection Job may stay active
+	// (including time its pod spends Pending). Without it, an unschedulable
+	// or hung pod keeps the Job "active" forever, and with ConcurrencyPolicy
+	// Forbid that blocks every future scheduled run.
+	activeDeadline := int64(1800)
+	if agent.Spec.ActiveDeadlineSeconds != nil {
+		activeDeadline = *agent.Spec.ActiveDeadlineSeconds
 	}
 
 	concurrencyPolicy := batchv1.ForbidConcurrent
@@ -183,7 +192,7 @@ func buildCronJob(agent *kubenticv1alpha1.KubenticAgent) *batchv1.CronJob {
 
 	jobSpec := batchv1.JobSpec{
 		BackoffLimit:          &backoffLimit,
-		ActiveDeadlineSeconds: agent.Spec.ActiveDeadlineSeconds,
+		ActiveDeadlineSeconds: &activeDeadline,
 		Template: corev1.PodTemplateSpec{
 			ObjectMeta: metav1.ObjectMeta{
 				Labels:      commonLabels(agent),
@@ -218,7 +227,11 @@ func buildPodSpec(agent *kubenticv1alpha1.KubenticAgent) corev1.PodSpec {
 
 	spec := corev1.PodSpec{
 		ServiceAccountName: resolveSAName(agent),
-		RestartPolicy:      corev1.RestartPolicyOnFailure,
+		// Never (paired with BackoffLimit=0) gives deterministic single-attempt
+		// semantics: a failed collection is not restarted in place by the kubelet,
+		// so a hung upload is not re-run and the bundle is not re-sent. The next
+		// attempt happens on the next schedule instead.
+		RestartPolicy: corev1.RestartPolicyNever,
 		SecurityContext: &corev1.PodSecurityContext{
 			RunAsNonRoot: boolPtr(true),
 			RunAsUser:    int64Ptr(1000),

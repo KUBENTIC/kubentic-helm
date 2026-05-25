@@ -73,11 +73,18 @@ type KubenticAgentSpec struct {
 	// +kubebuilder:validation:Maximum=10
 	FailedJobsHistoryLimit *int32 `json:"failedJobsHistoryLimit,omitempty"`
 
-	// ActiveDeadlineSeconds specifies the maximum duration in seconds a job pod may run.
+	// ActiveDeadlineSeconds caps the total time a collection Job may stay active
+	// (including time its pod is Pending). Once exceeded the Job is marked Failed,
+	// releasing the ConcurrencyPolicy=Forbid lock so the next scheduled run can start.
+	// +kubebuilder:default=1800
+	// +kubebuilder:validation:Minimum=60
 	ActiveDeadlineSeconds *int64 `json:"activeDeadlineSeconds,omitempty"`
 
 	// BackoffLimit specifies the number of retries before marking the job failed.
-	// +kubebuilder:default=2
+	// Defaults to 0 so a failed collection is attempted exactly once and does not
+	// re-upload on retry; the next attempt happens on the next schedule instead.
+	// +kubebuilder:default=0
+	// +kubebuilder:validation:Minimum=0
 	BackoffLimit *int32 `json:"backoffLimit,omitempty"`
 }
 

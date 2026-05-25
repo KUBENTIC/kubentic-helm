@@ -24,6 +24,7 @@ spec:
   successfulJobsHistoryLimit: {{ .Values.agent.successfulJobsHistoryLimit }}
   failedJobsHistoryLimit: {{ .Values.agent.failedJobsHistoryLimit }}
   backoffLimit: {{ .Values.agent.backoffLimit }}
+  activeDeadlineSeconds: {{ .Values.agent.activeDeadlineSeconds }}
   createRbac: {{ .Values.agent.createRbac }}
 
   collection:

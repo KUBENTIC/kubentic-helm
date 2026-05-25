@@ -97,11 +97,12 @@ spec:
                   maximum: 10
                 backoffLimit:
                   type: integer
-                  default: 2
+                  default: 0
                   minimum: 0
                 activeDeadlineSeconds:
                   type: integer
                   format: int64
+                  default: 1800
                   minimum: 60
                 collection:
                   type: object
