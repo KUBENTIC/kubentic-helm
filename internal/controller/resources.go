@@ -246,10 +246,10 @@ func buildContainer(agent *kubenticv1alpha1.KubenticAgent) corev1.Container {
 		tlsSkipVerify = "true"
 	}
 
-	uploadRetries := int32(3)
-	if agent.Spec.Backend.UploadMaxRetries > 0 {
-		uploadRetries = agent.Spec.Backend.UploadMaxRetries
-	}
+	// uploadRetries := int32(3)
+	// if agent.Spec.Backend.UploadMaxRetries > 0 {
+	// 	uploadRetries = agent.Spec.Backend.UploadMaxRetries
+	// }
 
 	logsEnabled := "true"
 	if !agent.Spec.Collection.Logs.Enabled {
@@ -295,7 +295,7 @@ func buildContainer(agent *kubenticv1alpha1.KubenticAgent) corev1.Container {
 		},
 		{Name: "KUBENTIC_BACKEND_URL", Value: resolveBackendURL(agent)},
 		{Name: "TLS_SKIP_VERIFY", Value: tlsSkipVerify},
-		{Name: "UPLOAD_MAX_RETRIES", Value: fmt.Sprintf("%d", uploadRetries)},
+		// {Name: "UPLOAD_MAX_RETRIES", Value: fmt.Sprintf("%d", uploadRetries)},
 		{Name: "COLLECT_LOGS", Value: logsEnabled},
 		{Name: "LOG_SINCE_HOURS", Value: fmt.Sprintf("%d", sinceHours)},
 		{Name: "LOG_CONCURRENCY", Value: fmt.Sprintf("%d", concurrency)},
@@ -362,5 +362,5 @@ func buildContainer(agent *kubenticv1alpha1.KubenticAgent) corev1.Container {
 
 // ─── Pointer helpers ─────────────────────────────────────────────────────────
 
-func boolPtr(b bool) *bool       { return &b }
-func int64Ptr(i int64) *int64    { return &i }
+func boolPtr(b bool) *bool    { return &b }
+func int64Ptr(i int64) *int64 { return &i }
