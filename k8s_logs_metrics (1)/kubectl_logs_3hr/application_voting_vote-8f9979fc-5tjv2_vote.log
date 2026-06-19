@@ -1,0 +1,498 @@
+2026-06-19T10:13:42.764733800Z [2026-06-19 10:13:42 +0000] [1] [INFO] Starting gunicorn 23.0.0
+2026-06-19T10:13:42.765119908Z [2026-06-19 10:13:42 +0000] [1] [INFO] Listening at: http://0.0.0.0:80 (1)
+2026-06-19T10:13:42.765202800Z [2026-06-19 10:13:42 +0000] [1] [INFO] Using worker: sync
+2026-06-19T10:13:42.771185052Z [2026-06-19 10:13:42 +0000] [7] [INFO] Booting worker with pid: 7
+2026-06-19T10:13:42.802778534Z [2026-06-19 10:13:42 +0000] [8] [INFO] Booting worker with pid: 8
+2026-06-19T10:13:42.915495753Z [2026-06-19 10:13:42 +0000] [9] [INFO] Booting worker with pid: 9
+2026-06-19T10:13:42.972753142Z [2026-06-19 10:13:42 +0000] [10] [INFO] Booting worker with pid: 10
+2026-06-19T10:22:54.311278078Z [2026-06-19 10:22:54,311] INFO in app: Received vote for a
+2026-06-19T10:22:54.311361777Z [2026-06-19 10:22:54 +0000] [10] [INFO] Received vote for a
+2026-06-19T10:22:54.316512180Z [2026-06-19 10:22:54,312] ERROR in app: Exception on / [POST]
+2026-06-19T10:22:54.316532587Z Traceback (most recent call last):
+2026-06-19T10:22:54.316537154Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 357, in connect
+2026-06-19T10:22:54.316541663Z     sock = self.retry.call_with_retry(
+2026-06-19T10:22:54.316545120Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316557873Z   File "/usr/local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+2026-06-19T10:22:54.316561372Z     return do()
+2026-06-19T10:22:54.316564730Z            ^^^^
+2026-06-19T10:22:54.316568019Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 358, in <lambda>
+2026-06-19T10:22:54.316571642Z     lambda: self._connect(), lambda error: self.disconnect(error)
+2026-06-19T10:22:54.316575028Z             ^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316578649Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 730, in _connect
+2026-06-19T10:22:54.316581872Z     raise err
+2026-06-19T10:22:54.316584913Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 718, in _connect
+2026-06-19T10:22:54.316588498Z     sock.connect(socket_address)
+2026-06-19T10:22:54.316591957Z PermissionError: [Errno 1] Operation not permitted
+2026-06-19T10:22:54.316594949Z 
+2026-06-19T10:22:54.316598176Z During handling of the above exception, another exception occurred:
+2026-06-19T10:22:54.316601159Z 
+2026-06-19T10:22:54.316604399Z Traceback (most recent call last):
+2026-06-19T10:22:54.316607803Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+2026-06-19T10:22:54.316611084Z     response = self.full_dispatch_request()
+2026-06-19T10:22:54.316614086Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316618045Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+2026-06-19T10:22:54.316621694Z     rv = self.handle_user_exception(e)
+2026-06-19T10:22:54.316624963Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316628151Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+2026-06-19T10:22:54.316631436Z     rv = self.dispatch_request()
+2026-06-19T10:22:54.316634567Z          ^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316637641Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+2026-06-19T10:22:54.316640924Z     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+2026-06-19T10:22:54.316644072Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316647452Z   File "/usr/local/app/app.py", line 37, in hello
+2026-06-19T10:22:54.316653500Z     redis.rpush('votes', data)
+2026-06-19T10:22:54.316671885Z   File "/usr/local/lib/python3.11/site-packages/redis/commands/core.py", line 2818, in rpush
+2026-06-19T10:22:54.316674935Z     return self.execute_command("RPUSH", name, *values)
+2026-06-19T10:22:54.316677364Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316681859Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 559, in execute_command
+2026-06-19T10:22:54.316684400Z     return self._execute_command(*args, **options)
+2026-06-19T10:22:54.316686828Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316689440Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 565, in _execute_command
+2026-06-19T10:22:54.316691797Z     conn = self.connection or pool.get_connection(command_name, **options)
+2026-06-19T10:22:54.316694057Z                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316696636Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 1422, in get_connection
+2026-06-19T10:22:54.316699556Z     connection.connect()
+2026-06-19T10:22:54.316721955Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 363, in connect
+2026-06-19T10:22:54.316724445Z     raise ConnectionError(self._error_message(e))
+2026-06-19T10:22:54.316726825Z redis.exceptions.ConnectionError: Error 1 connecting to redis:6379. Operation not permitted.
+2026-06-19T10:22:54.316729291Z [2026-06-19 10:22:54 +0000] [10] [ERROR] Exception on / [POST]
+2026-06-19T10:22:54.316731700Z Traceback (most recent call last):
+2026-06-19T10:22:54.316734093Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 357, in connect
+2026-06-19T10:22:54.316736577Z     sock = self.retry.call_with_retry(
+2026-06-19T10:22:54.316738940Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316741165Z   File "/usr/local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+2026-06-19T10:22:54.316743332Z     return do()
+2026-06-19T10:22:54.316745713Z            ^^^^
+2026-06-19T10:22:54.316748042Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 358, in <lambda>
+2026-06-19T10:22:54.316750729Z     lambda: self._connect(), lambda error: self.disconnect(error)
+2026-06-19T10:22:54.316752950Z             ^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316755339Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 730, in _connect
+2026-06-19T10:22:54.316757431Z     raise err
+2026-06-19T10:22:54.316759686Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 718, in _connect
+2026-06-19T10:22:54.316761991Z     sock.connect(socket_address)
+2026-06-19T10:22:54.316764311Z PermissionError: [Errno 1] Operation not permitted
+2026-06-19T10:22:54.316766297Z 
+2026-06-19T10:22:54.316768646Z During handling of the above exception, another exception occurred:
+2026-06-19T10:22:54.316770805Z 
+2026-06-19T10:22:54.316773038Z Traceback (most recent call last):
+2026-06-19T10:22:54.316775515Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+2026-06-19T10:22:54.316777628Z     response = self.full_dispatch_request()
+2026-06-19T10:22:54.316779814Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316782222Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+2026-06-19T10:22:54.316789387Z     rv = self.handle_user_exception(e)
+2026-06-19T10:22:54.316792138Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316794675Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+2026-06-19T10:22:54.316797098Z     rv = self.dispatch_request()
+2026-06-19T10:22:54.316805183Z          ^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316807754Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+2026-06-19T10:22:54.316810306Z     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+2026-06-19T10:22:54.316812755Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316814988Z   File "/usr/local/app/app.py", line 37, in hello
+2026-06-19T10:22:54.316817205Z     redis.rpush('votes', data)
+2026-06-19T10:22:54.316819810Z   File "/usr/local/lib/python3.11/site-packages/redis/commands/core.py", line 2818, in rpush
+2026-06-19T10:22:54.316821932Z     return self.execute_command("RPUSH", name, *values)
+2026-06-19T10:22:54.316824167Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316826448Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 559, in execute_command
+2026-06-19T10:22:54.316828725Z     return self._execute_command(*args, **options)
+2026-06-19T10:22:54.316830894Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316833028Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 565, in _execute_command
+2026-06-19T10:22:54.316835310Z     conn = self.connection or pool.get_connection(command_name, **options)
+2026-06-19T10:22:54.316837872Z                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:22:54.316840200Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 1422, in get_connection
+2026-06-19T10:22:54.316842518Z     connection.connect()
+2026-06-19T10:22:54.316845679Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 363, in connect
+2026-06-19T10:22:54.316848018Z     raise ConnectionError(self._error_message(e))
+2026-06-19T10:22:54.316850461Z redis.exceptions.ConnectionError: Error 1 connecting to redis:6379. Operation not permitted.
+2026-06-19T10:22:54.317446389Z 100.96.2.107 - - [19/Jun/2026:10:22:54 +0000] "POST / HTTP/1.1" 500 265 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:23:07.194056871Z 100.96.2.107 - - [19/Jun/2026:10:23:07 +0000] "GET / HTTP/1.1" 200 1292 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:23:07.885489534Z 100.96.2.107 - - [19/Jun/2026:10:23:07 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:23:09.478463588Z [2026-06-19 10:23:09,478] INFO in app: Received vote for a
+2026-06-19T10:23:09.478500133Z [2026-06-19 10:23:09 +0000] [9] [INFO] Received vote for a
+2026-06-19T10:23:09.483776881Z [2026-06-19 10:23:09,479] ERROR in app: Exception on / [POST]
+2026-06-19T10:23:09.483801895Z Traceback (most recent call last):
+2026-06-19T10:23:09.483805733Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 357, in connect
+2026-06-19T10:23:09.483808594Z     sock = self.retry.call_with_retry(
+2026-06-19T10:23:09.483810938Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483813329Z   File "/usr/local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+2026-06-19T10:23:09.483815533Z     return do()
+2026-06-19T10:23:09.483817943Z            ^^^^
+2026-06-19T10:23:09.483820406Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 358, in <lambda>
+2026-06-19T10:23:09.483823439Z     lambda: self._connect(), lambda error: self.disconnect(error)
+2026-06-19T10:23:09.483845786Z             ^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483848457Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 730, in _connect
+2026-06-19T10:23:09.483850747Z     raise err
+2026-06-19T10:23:09.483853101Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 718, in _connect
+2026-06-19T10:23:09.483855323Z     sock.connect(socket_address)
+2026-06-19T10:23:09.483857436Z PermissionError: [Errno 1] Operation not permitted
+2026-06-19T10:23:09.483859366Z 
+2026-06-19T10:23:09.483861707Z During handling of the above exception, another exception occurred:
+2026-06-19T10:23:09.483863880Z 
+2026-06-19T10:23:09.483866245Z Traceback (most recent call last):
+2026-06-19T10:23:09.483868804Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+2026-06-19T10:23:09.483871033Z     response = self.full_dispatch_request()
+2026-06-19T10:23:09.483873207Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483875775Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+2026-06-19T10:23:09.483878070Z     rv = self.handle_user_exception(e)
+2026-06-19T10:23:09.483880395Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483883002Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+2026-06-19T10:23:09.483885155Z     rv = self.dispatch_request()
+2026-06-19T10:23:09.483887302Z          ^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483889498Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+2026-06-19T10:23:09.483891611Z     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+2026-06-19T10:23:09.483893973Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483896432Z   File "/usr/local/app/app.py", line 37, in hello
+2026-06-19T10:23:09.483898515Z     redis.rpush('votes', data)
+2026-06-19T10:23:09.483900700Z   File "/usr/local/lib/python3.11/site-packages/redis/commands/core.py", line 2818, in rpush
+2026-06-19T10:23:09.483903026Z     return self.execute_command("RPUSH", name, *values)
+2026-06-19T10:23:09.483905304Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483907553Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 559, in execute_command
+2026-06-19T10:23:09.483909950Z     return self._execute_command(*args, **options)
+2026-06-19T10:23:09.483912700Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483915058Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 565, in _execute_command
+2026-06-19T10:23:09.483917488Z     conn = self.connection or pool.get_connection(command_name, **options)
+2026-06-19T10:23:09.483919920Z                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483922376Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 1422, in get_connection
+2026-06-19T10:23:09.483925148Z     connection.connect()
+2026-06-19T10:23:09.483927769Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 363, in connect
+2026-06-19T10:23:09.483929973Z     raise ConnectionError(self._error_message(e))
+2026-06-19T10:23:09.483932301Z redis.exceptions.ConnectionError: Error 1 connecting to redis:6379. Operation not permitted.
+2026-06-19T10:23:09.483934511Z [2026-06-19 10:23:09 +0000] [9] [ERROR] Exception on / [POST]
+2026-06-19T10:23:09.483936843Z Traceback (most recent call last):
+2026-06-19T10:23:09.483939255Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 357, in connect
+2026-06-19T10:23:09.483946521Z     sock = self.retry.call_with_retry(
+2026-06-19T10:23:09.483948780Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483951001Z   File "/usr/local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+2026-06-19T10:23:09.483953357Z     return do()
+2026-06-19T10:23:09.483955441Z            ^^^^
+2026-06-19T10:23:09.483957782Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 358, in <lambda>
+2026-06-19T10:23:09.483960195Z     lambda: self._connect(), lambda error: self.disconnect(error)
+2026-06-19T10:23:09.483962450Z             ^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483964757Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 730, in _connect
+2026-06-19T10:23:09.483967307Z     raise err
+2026-06-19T10:23:09.483969889Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 718, in _connect
+2026-06-19T10:23:09.483972133Z     sock.connect(socket_address)
+2026-06-19T10:23:09.483974460Z PermissionError: [Errno 1] Operation not permitted
+2026-06-19T10:23:09.483976318Z 
+2026-06-19T10:23:09.483978515Z During handling of the above exception, another exception occurred:
+2026-06-19T10:23:09.483980434Z 
+2026-06-19T10:23:09.483982837Z Traceback (most recent call last):
+2026-06-19T10:23:09.483985541Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+2026-06-19T10:23:09.483987823Z     response = self.full_dispatch_request()
+2026-06-19T10:23:09.483990194Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.483992480Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+2026-06-19T10:23:09.483999715Z     rv = self.handle_user_exception(e)
+2026-06-19T10:23:09.484002532Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.484004743Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+2026-06-19T10:23:09.484007062Z     rv = self.dispatch_request()
+2026-06-19T10:23:09.484009285Z          ^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.484011827Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+2026-06-19T10:23:09.484014276Z     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+2026-06-19T10:23:09.484017234Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.484019443Z   File "/usr/local/app/app.py", line 37, in hello
+2026-06-19T10:23:09.484021923Z     redis.rpush('votes', data)
+2026-06-19T10:23:09.484024704Z   File "/usr/local/lib/python3.11/site-packages/redis/commands/core.py", line 2818, in rpush
+2026-06-19T10:23:09.484026916Z     return self.execute_command("RPUSH", name, *values)
+2026-06-19T10:23:09.484029283Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.484031577Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 559, in execute_command
+2026-06-19T10:23:09.484034046Z     return self._execute_command(*args, **options)
+2026-06-19T10:23:09.484036352Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.484038820Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 565, in _execute_command
+2026-06-19T10:23:09.484041380Z     conn = self.connection or pool.get_connection(command_name, **options)
+2026-06-19T10:23:09.484043711Z                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:09.484046084Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 1422, in get_connection
+2026-06-19T10:23:09.484048469Z     connection.connect()
+2026-06-19T10:23:09.484055618Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 363, in connect
+2026-06-19T10:23:09.484057774Z     raise ConnectionError(self._error_message(e))
+2026-06-19T10:23:09.484060064Z redis.exceptions.ConnectionError: Error 1 connecting to redis:6379. Operation not permitted.
+2026-06-19T10:23:09.484078897Z 100.96.2.107 - - [19/Jun/2026:10:23:09 +0000] "POST / HTTP/1.1" 500 265 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:23:14.476442117Z 100.96.2.107 - - [19/Jun/2026:10:23:14 +0000] "GET / HTTP/1.1" 200 1292 "-" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:23:14.781811203Z 100.96.2.107 - - [19/Jun/2026:10:23:14 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:23:50.559285881Z [2026-06-19 10:23:50,558] INFO in app: Received vote for a
+2026-06-19T10:23:50.559319076Z [2026-06-19 10:23:50 +0000] [8] [INFO] Received vote for a
+2026-06-19T10:23:50.563913910Z [2026-06-19 10:23:50,560] ERROR in app: Exception on / [POST]
+2026-06-19T10:23:50.563941148Z Traceback (most recent call last):
+2026-06-19T10:23:50.563972717Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 357, in connect
+2026-06-19T10:23:50.563977531Z     sock = self.retry.call_with_retry(
+2026-06-19T10:23:50.563981024Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.563984784Z   File "/usr/local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+2026-06-19T10:23:50.563987900Z     return do()
+2026-06-19T10:23:50.563991412Z            ^^^^
+2026-06-19T10:23:50.563994548Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 358, in <lambda>
+2026-06-19T10:23:50.563997955Z     lambda: self._connect(), lambda error: self.disconnect(error)
+2026-06-19T10:23:50.564001568Z             ^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564004927Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 730, in _connect
+2026-06-19T10:23:50.564008048Z     raise err
+2026-06-19T10:23:50.564011113Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 718, in _connect
+2026-06-19T10:23:50.564014029Z     sock.connect(socket_address)
+2026-06-19T10:23:50.564017214Z PermissionError: [Errno 1] Operation not permitted
+2026-06-19T10:23:50.564019917Z 
+2026-06-19T10:23:50.564023098Z During handling of the above exception, another exception occurred:
+2026-06-19T10:23:50.564025872Z 
+2026-06-19T10:23:50.564029083Z Traceback (most recent call last):
+2026-06-19T10:23:50.564032723Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+2026-06-19T10:23:50.564036045Z     response = self.full_dispatch_request()
+2026-06-19T10:23:50.564038968Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564042826Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+2026-06-19T10:23:50.564045834Z     rv = self.handle_user_exception(e)
+2026-06-19T10:23:50.564049513Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564053118Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+2026-06-19T10:23:50.564056731Z     rv = self.dispatch_request()
+2026-06-19T10:23:50.564060210Z          ^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564064057Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+2026-06-19T10:23:50.564082619Z     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+2026-06-19T10:23:50.564085215Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564087478Z   File "/usr/local/app/app.py", line 37, in hello
+2026-06-19T10:23:50.564089590Z     redis.rpush('votes', data)
+2026-06-19T10:23:50.564091889Z   File "/usr/local/lib/python3.11/site-packages/redis/commands/core.py", line 2818, in rpush
+2026-06-19T10:23:50.564094302Z     return self.execute_command("RPUSH", name, *values)
+2026-06-19T10:23:50.564096701Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564098815Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 559, in execute_command
+2026-06-19T10:23:50.564101024Z     return self._execute_command(*args, **options)
+2026-06-19T10:23:50.564103289Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564105624Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 565, in _execute_command
+2026-06-19T10:23:50.564107855Z     conn = self.connection or pool.get_connection(command_name, **options)
+2026-06-19T10:23:50.564110092Z                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564112277Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 1422, in get_connection
+2026-06-19T10:23:50.564114779Z     connection.connect()
+2026-06-19T10:23:50.564120308Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 363, in connect
+2026-06-19T10:23:50.564122660Z     raise ConnectionError(self._error_message(e))
+2026-06-19T10:23:50.564125061Z redis.exceptions.ConnectionError: Error 1 connecting to redis:6379. Operation not permitted.
+2026-06-19T10:23:50.564140407Z [2026-06-19 10:23:50 +0000] [8] [ERROR] Exception on / [POST]
+2026-06-19T10:23:50.564143084Z Traceback (most recent call last):
+2026-06-19T10:23:50.564145484Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 357, in connect
+2026-06-19T10:23:50.564147889Z     sock = self.retry.call_with_retry(
+2026-06-19T10:23:50.564150489Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564152741Z   File "/usr/local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+2026-06-19T10:23:50.564155101Z     return do()
+2026-06-19T10:23:50.564157509Z            ^^^^
+2026-06-19T10:23:50.564160353Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 358, in <lambda>
+2026-06-19T10:23:50.564162812Z     lambda: self._connect(), lambda error: self.disconnect(error)
+2026-06-19T10:23:50.564165134Z             ^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564167420Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 730, in _connect
+2026-06-19T10:23:50.564169866Z     raise err
+2026-06-19T10:23:50.564172266Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 718, in _connect
+2026-06-19T10:23:50.564174448Z     sock.connect(socket_address)
+2026-06-19T10:23:50.564176696Z PermissionError: [Errno 1] Operation not permitted
+2026-06-19T10:23:50.564178532Z 
+2026-06-19T10:23:50.564180857Z During handling of the above exception, another exception occurred:
+2026-06-19T10:23:50.564182782Z 
+2026-06-19T10:23:50.564184828Z Traceback (most recent call last):
+2026-06-19T10:23:50.564186998Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+2026-06-19T10:23:50.564189412Z     response = self.full_dispatch_request()
+2026-06-19T10:23:50.564191517Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564193798Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+2026-06-19T10:23:50.564201203Z     rv = self.handle_user_exception(e)
+2026-06-19T10:23:50.564203679Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564205879Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+2026-06-19T10:23:50.564208139Z     rv = self.dispatch_request()
+2026-06-19T10:23:50.564210499Z          ^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564213012Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+2026-06-19T10:23:50.564215515Z     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+2026-06-19T10:23:50.564217852Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564220534Z   File "/usr/local/app/app.py", line 37, in hello
+2026-06-19T10:23:50.564222886Z     redis.rpush('votes', data)
+2026-06-19T10:23:50.564225038Z   File "/usr/local/lib/python3.11/site-packages/redis/commands/core.py", line 2818, in rpush
+2026-06-19T10:23:50.564227217Z     return self.execute_command("RPUSH", name, *values)
+2026-06-19T10:23:50.564229423Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564231876Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 559, in execute_command
+2026-06-19T10:23:50.564234012Z     return self._execute_command(*args, **options)
+2026-06-19T10:23:50.564236231Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564238430Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 565, in _execute_command
+2026-06-19T10:23:50.564240729Z     conn = self.connection or pool.get_connection(command_name, **options)
+2026-06-19T10:23:50.564242904Z                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:50.564245151Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 1422, in get_connection
+2026-06-19T10:23:50.564247282Z     connection.connect()
+2026-06-19T10:23:50.564249640Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 363, in connect
+2026-06-19T10:23:50.564252128Z     raise ConnectionError(self._error_message(e))
+2026-06-19T10:23:50.564254283Z redis.exceptions.ConnectionError: Error 1 connecting to redis:6379. Operation not permitted.
+2026-06-19T10:23:50.564914593Z 100.96.2.107 - - [19/Jun/2026:10:23:50 +0000] "POST / HTTP/1.1" 500 265 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:23:52.724853330Z [2026-06-19 10:23:52,724] INFO in app: Received vote for a
+2026-06-19T10:23:52.724888629Z [2026-06-19 10:23:52 +0000] [9] [INFO] Received vote for a
+2026-06-19T10:23:52.726757558Z [2026-06-19 10:23:52,725] ERROR in app: Exception on / [POST]
+2026-06-19T10:23:52.726777789Z Traceback (most recent call last):
+2026-06-19T10:23:52.726780854Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 357, in connect
+2026-06-19T10:23:52.726783414Z     sock = self.retry.call_with_retry(
+2026-06-19T10:23:52.726806378Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726809535Z   File "/usr/local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+2026-06-19T10:23:52.726811922Z     return do()
+2026-06-19T10:23:52.726815392Z            ^^^^
+2026-06-19T10:23:52.726818032Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 358, in <lambda>
+2026-06-19T10:23:52.726820715Z     lambda: self._connect(), lambda error: self.disconnect(error)
+2026-06-19T10:23:52.726823527Z             ^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726838424Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 730, in _connect
+2026-06-19T10:23:52.726840928Z     raise err
+2026-06-19T10:23:52.726843160Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 718, in _connect
+2026-06-19T10:23:52.726845884Z     sock.connect(socket_address)
+2026-06-19T10:23:52.726848353Z PermissionError: [Errno 1] Operation not permitted
+2026-06-19T10:23:52.726850516Z 
+2026-06-19T10:23:52.726852782Z During handling of the above exception, another exception occurred:
+2026-06-19T10:23:52.726854839Z 
+2026-06-19T10:23:52.726857206Z Traceback (most recent call last):
+2026-06-19T10:23:52.726859676Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+2026-06-19T10:23:52.726862020Z     response = self.full_dispatch_request()
+2026-06-19T10:23:52.726864366Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726867072Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+2026-06-19T10:23:52.726869582Z     rv = self.handle_user_exception(e)
+2026-06-19T10:23:52.726871682Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726873796Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+2026-06-19T10:23:52.726876105Z     rv = self.dispatch_request()
+2026-06-19T10:23:52.726878346Z          ^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726880570Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+2026-06-19T10:23:52.726882829Z     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+2026-06-19T10:23:52.726884980Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726887342Z   File "/usr/local/app/app.py", line 37, in hello
+2026-06-19T10:23:52.726889516Z     redis.rpush('votes', data)
+2026-06-19T10:23:52.726891657Z   File "/usr/local/lib/python3.11/site-packages/redis/commands/core.py", line 2818, in rpush
+2026-06-19T10:23:52.726894034Z     return self.execute_command("RPUSH", name, *values)
+2026-06-19T10:23:52.726896421Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726898832Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 559, in execute_command
+2026-06-19T10:23:52.726901440Z     return self._execute_command(*args, **options)
+2026-06-19T10:23:52.726903666Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726906054Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 565, in _execute_command
+2026-06-19T10:23:52.726908491Z     conn = self.connection or pool.get_connection(command_name, **options)
+2026-06-19T10:23:52.726910716Z                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726912896Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 1422, in get_connection
+2026-06-19T10:23:52.726915598Z     connection.connect()
+2026-06-19T10:23:52.726917742Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 363, in connect
+2026-06-19T10:23:52.726920000Z     raise ConnectionError(self._error_message(e))
+2026-06-19T10:23:52.726922086Z redis.exceptions.ConnectionError: Error 1 connecting to redis:6379. Operation not permitted.
+2026-06-19T10:23:52.726924649Z [2026-06-19 10:23:52 +0000] [9] [ERROR] Exception on / [POST]
+2026-06-19T10:23:52.726926851Z Traceback (most recent call last):
+2026-06-19T10:23:52.726928962Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 357, in connect
+2026-06-19T10:23:52.726931486Z     sock = self.retry.call_with_retry(
+2026-06-19T10:23:52.726939603Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726942127Z   File "/usr/local/lib/python3.11/site-packages/redis/retry.py", line 62, in call_with_retry
+2026-06-19T10:23:52.726944435Z     return do()
+2026-06-19T10:23:52.726946882Z            ^^^^
+2026-06-19T10:23:52.726949438Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 358, in <lambda>
+2026-06-19T10:23:52.726951643Z     lambda: self._connect(), lambda error: self.disconnect(error)
+2026-06-19T10:23:52.726953734Z             ^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726955916Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 730, in _connect
+2026-06-19T10:23:52.726958091Z     raise err
+2026-06-19T10:23:52.726960339Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 718, in _connect
+2026-06-19T10:23:52.726962501Z     sock.connect(socket_address)
+2026-06-19T10:23:52.726964845Z PermissionError: [Errno 1] Operation not permitted
+2026-06-19T10:23:52.726966854Z 
+2026-06-19T10:23:52.726969394Z During handling of the above exception, another exception occurred:
+2026-06-19T10:23:52.726971680Z 
+2026-06-19T10:23:52.726974028Z Traceback (most recent call last):
+2026-06-19T10:23:52.726976421Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 1473, in wsgi_app
+2026-06-19T10:23:52.726979025Z     response = self.full_dispatch_request()
+2026-06-19T10:23:52.726985143Z                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.726987531Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 882, in full_dispatch_request
+2026-06-19T10:23:52.727004419Z     rv = self.handle_user_exception(e)
+2026-06-19T10:23:52.727007149Z          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.727009413Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 880, in full_dispatch_request
+2026-06-19T10:23:52.727011696Z     rv = self.dispatch_request()
+2026-06-19T10:23:52.727014110Z          ^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.727016737Z   File "/usr/local/lib/python3.11/site-packages/flask/app.py", line 865, in dispatch_request
+2026-06-19T10:23:52.727019133Z     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+2026-06-19T10:23:52.727021587Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.727024036Z   File "/usr/local/app/app.py", line 37, in hello
+2026-06-19T10:23:52.727026281Z     redis.rpush('votes', data)
+2026-06-19T10:23:52.727028621Z   File "/usr/local/lib/python3.11/site-packages/redis/commands/core.py", line 2818, in rpush
+2026-06-19T10:23:52.727031187Z     return self.execute_command("RPUSH", name, *values)
+2026-06-19T10:23:52.727033236Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.727035430Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 559, in execute_command
+2026-06-19T10:23:52.727037661Z     return self._execute_command(*args, **options)
+2026-06-19T10:23:52.727040003Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.727042321Z   File "/usr/local/lib/python3.11/site-packages/redis/client.py", line 565, in _execute_command
+2026-06-19T10:23:52.727044630Z     conn = self.connection or pool.get_connection(command_name, **options)
+2026-06-19T10:23:52.727047094Z                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T10:23:52.727049473Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 1422, in get_connection
+2026-06-19T10:23:52.727051801Z     connection.connect()
+2026-06-19T10:23:52.727054172Z   File "/usr/local/lib/python3.11/site-packages/redis/connection.py", line 363, in connect
+2026-06-19T10:23:52.727062145Z     raise ConnectionError(self._error_message(e))
+2026-06-19T10:23:52.727064656Z redis.exceptions.ConnectionError: Error 1 connecting to redis:6379. Operation not permitted.
+2026-06-19T10:23:52.727592711Z 100.96.2.107 - - [19/Jun/2026:10:23:52 +0000] "POST / HTTP/1.1" 500 265 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:26:02.266906185Z [2026-06-19 10:26:02,266] INFO in app: Received vote for a
+2026-06-19T10:26:02.269051690Z [2026-06-19 10:26:02 +0000] [9] [INFO] Received vote for a
+2026-06-19T10:26:02.316142207Z 100.96.2.107 - - [19/Jun/2026:10:26:02 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:26:02.654372203Z 100.96.2.107 - - [19/Jun/2026:10:26:02 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:26:04.274639585Z [2026-06-19 10:26:04,274] INFO in app: Received vote for b
+2026-06-19T10:26:04.274722940Z [2026-06-19 10:26:04 +0000] [10] [INFO] Received vote for b
+2026-06-19T10:26:04.276875372Z 100.96.2.107 - - [19/Jun/2026:10:26:04 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:26:04.659544427Z 100.96.2.107 - - [19/Jun/2026:10:26:04 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:26:05.883251309Z [2026-06-19 10:26:05,883] INFO in app: Received vote for a
+2026-06-19T10:26:05.883345658Z [2026-06-19 10:26:05 +0000] [8] [INFO] Received vote for a
+2026-06-19T10:26:05.890292871Z 100.96.2.107 - - [19/Jun/2026:10:26:05 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:26:06.226674017Z 100.96.2.107 - - [19/Jun/2026:10:26:06 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:29:54.325210414Z [2026-06-19 10:29:54,324] INFO in app: Received vote for b
+2026-06-19T10:29:54.325241182Z [2026-06-19 10:29:54 +0000] [8] [INFO] Received vote for b
+2026-06-19T10:29:54.328041095Z 100.96.2.107 - - [19/Jun/2026:10:29:54 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:29:54.635535644Z 100.96.2.107 - - [19/Jun/2026:10:29:54 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:43:05.964104617Z [2026-06-19 10:43:05,963] INFO in app: Received vote for b
+2026-06-19T10:43:05.964136242Z [2026-06-19 10:43:05 +0000] [7] [INFO] Received vote for b
+2026-06-19T10:43:05.971839333Z 100.96.2.107 - - [19/Jun/2026:10:43:05 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:43:06.271394223Z 100.96.2.107 - - [19/Jun/2026:10:43:06 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:43:08.494396118Z [2026-06-19 10:43:08,494] INFO in app: Received vote for a
+2026-06-19T10:43:08.494418206Z [2026-06-19 10:43:08 +0000] [9] [INFO] Received vote for a
+2026-06-19T10:43:08.496446869Z 100.96.2.107 - - [19/Jun/2026:10:43:08 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:43:08.790534464Z 100.96.2.107 - - [19/Jun/2026:10:43:08 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:43:10.378756551Z [2026-06-19 10:43:10,378] INFO in app: Received vote for b
+2026-06-19T10:43:10.378777173Z [2026-06-19 10:43:10 +0000] [10] [INFO] Received vote for b
+2026-06-19T10:43:10.380674878Z 100.96.2.107 - - [19/Jun/2026:10:43:10 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:43:10.694939940Z 100.96.2.107 - - [19/Jun/2026:10:43:10 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:26.424583865Z [2026-06-19 10:44:26,424] INFO in app: Received vote for a
+2026-06-19T10:44:26.424612378Z [2026-06-19 10:44:26 +0000] [10] [INFO] Received vote for a
+2026-06-19T10:44:26.426832738Z 100.96.2.107 - - [19/Jun/2026:10:44:26 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:26.783050090Z 100.96.2.107 - - [19/Jun/2026:10:44:26 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:27.929091647Z [2026-06-19 10:44:27,928] INFO in app: Received vote for b
+2026-06-19T10:44:27.929113907Z [2026-06-19 10:44:27 +0000] [10] [INFO] Received vote for b
+2026-06-19T10:44:27.931160380Z 100.96.2.107 - - [19/Jun/2026:10:44:27 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:28.317614850Z 100.96.2.107 - - [19/Jun/2026:10:44:28 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:29.884539641Z [2026-06-19 10:44:29,884] INFO in app: Received vote for a
+2026-06-19T10:44:29.884561839Z [2026-06-19 10:44:29 +0000] [7] [INFO] Received vote for a
+2026-06-19T10:44:29.887019031Z 100.96.2.107 - - [19/Jun/2026:10:44:29 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:30.176671058Z 100.96.2.107 - - [19/Jun/2026:10:44:30 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:32.876881845Z [2026-06-19 10:44:32,876] INFO in app: Received vote for b
+2026-06-19T10:44:32.876905659Z [2026-06-19 10:44:32 +0000] [9] [INFO] Received vote for b
+2026-06-19T10:44:32.879158096Z 100.96.2.107 - - [19/Jun/2026:10:44:32 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:33.238743155Z 100.96.2.107 - - [19/Jun/2026:10:44:33 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:34.690886391Z [2026-06-19 10:44:34,690] INFO in app: Received vote for a
+2026-06-19T10:44:34.690907404Z [2026-06-19 10:44:34 +0000] [8] [INFO] Received vote for a
+2026-06-19T10:44:34.692947683Z 100.96.2.107 - - [19/Jun/2026:10:44:34 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:44:35.118441680Z 100.96.2.107 - - [19/Jun/2026:10:44:35 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:46:17.536461778Z [2026-06-19 10:46:17,536] INFO in app: Received vote for b
+2026-06-19T10:46:17.536501346Z [2026-06-19 10:46:17 +0000] [10] [INFO] Received vote for b
+2026-06-19T10:46:17.538654126Z 100.96.2.107 - - [19/Jun/2026:10:46:17 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T10:46:17.882664443Z 100.96.2.107 - - [19/Jun/2026:10:46:17 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T11:28:21.330290636Z [2026-06-19 11:28:21,330] INFO in app: Received vote for b
+2026-06-19T11:28:21.330320555Z [2026-06-19 11:28:21 +0000] [8] [INFO] Received vote for b
+2026-06-19T11:28:21.332360590Z 100.96.2.107 - - [19/Jun/2026:11:28:21 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T11:28:21.643569787Z 100.96.2.107 - - [19/Jun/2026:11:28:21 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T11:28:23.627308443Z [2026-06-19 11:28:23,627] INFO in app: Received vote for a
+2026-06-19T11:28:23.627330651Z [2026-06-19 11:28:23 +0000] [10] [INFO] Received vote for a
+2026-06-19T11:28:23.629572915Z 100.96.2.107 - - [19/Jun/2026:11:28:23 +0000] "POST / HTTP/1.1" 200 1695 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T11:28:23.991987973Z 100.96.2.107 - - [19/Jun/2026:11:28:23 +0000] "GET /static/stylesheets/style.css HTTP/1.1" 304 0 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T12:38:59.265056079Z 100.96.2.107 - - [19/Jun/2026:12:38:59 +0000] "GET /favicon.ico HTTP/1.1" 404 207 "http://35.90.39.207:31000/" "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/149.0.0.0 Safari/537.36"
+2026-06-19T12:39:29.676508277Z [2026-06-19 12:39:29 +0000] [1] [CRITICAL] WORKER TIMEOUT (pid:10)
+2026-06-19T12:39:29.678065784Z [2026-06-19 12:39:29 +0000] [10] [ERROR] Error handling request (no URI read)
+2026-06-19T12:39:29.678084012Z Traceback (most recent call last):
+2026-06-19T12:39:29.678088442Z   File "/usr/local/lib/python3.11/site-packages/gunicorn/workers/sync.py", line 133, in handle
+2026-06-19T12:39:29.678092321Z     req = next(parser)
+2026-06-19T12:39:29.678127749Z           ^^^^^^^^^^^^
+2026-06-19T12:39:29.678131342Z   File "/usr/local/lib/python3.11/site-packages/gunicorn/http/parser.py", line 41, in __next__
+2026-06-19T12:39:29.678134942Z     self.mesg = self.mesg_class(self.cfg, self.unreader, self.source_addr, self.req_count)
+2026-06-19T12:39:29.678155050Z                 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T12:39:29.678157425Z   File "/usr/local/lib/python3.11/site-packages/gunicorn/http/message.py", line 259, in __init__
+2026-06-19T12:39:29.678159382Z     super().__init__(cfg, unreader, peer_addr)
+2026-06-19T12:39:29.678161734Z   File "/usr/local/lib/python3.11/site-packages/gunicorn/http/message.py", line 60, in __init__
+2026-06-19T12:39:29.678163922Z     unused = self.parse(self.unreader)
+2026-06-19T12:39:29.678166335Z              ^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T12:39:29.678168659Z   File "/usr/local/lib/python3.11/site-packages/gunicorn/http/message.py", line 271, in parse
+2026-06-19T12:39:29.678170873Z     self.get_data(unreader, buf, stop=True)
+2026-06-19T12:39:29.678173155Z   File "/usr/local/lib/python3.11/site-packages/gunicorn/http/message.py", line 262, in get_data
+2026-06-19T12:39:29.678175939Z     data = unreader.read()
+2026-06-19T12:39:29.678177883Z            ^^^^^^^^^^^^^^^
+2026-06-19T12:39:29.678180403Z   File "/usr/local/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 36, in read
+2026-06-19T12:39:29.678182639Z     d = self.chunk()
+2026-06-19T12:39:29.678184864Z         ^^^^^^^^^^^^
+2026-06-19T12:39:29.678186889Z   File "/usr/local/lib/python3.11/site-packages/gunicorn/http/unreader.py", line 63, in chunk
+2026-06-19T12:39:29.678204484Z     return self.sock.recv(self.mxchunk)
+2026-06-19T12:39:29.678207040Z            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+2026-06-19T12:39:29.678209560Z   File "/usr/local/lib/python3.11/site-packages/gunicorn/workers/base.py", line 204, in handle_abort
+2026-06-19T12:39:29.678212055Z     sys.exit(1)
+2026-06-19T12:39:29.678214472Z SystemExit: 1
+2026-06-19T12:39:29.678505652Z [2026-06-19 12:39:29 +0000] [10] [INFO] Worker exiting (pid: 10)
+2026-06-19T12:39:29.751254825Z [2026-06-19 12:39:29 +0000] [11] [INFO] Booting worker with pid: 11

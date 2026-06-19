@@ -94,7 +94,7 @@ agent:
   agentImage:
     repository: ghcr.io/kubentic/agent
     tag: latest
-    pullPolicy: IfNotPresent
+    pullPolicy: Always
 
   resources:
     requests:

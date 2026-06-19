@@ -1,0 +1,179 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "__name__": "node_load15",
+          "container": "node-exporter",
+          "endpoint": "metrics",
+          "instance": "172.20.179.51:9100",
+          "job": "node-exporter",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-prometheus-node-exporter-jp6jt",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-prometheus-node-exporter",
+          "log_type": "k8s",
+          "node": "i-0010bc1572a60c430",
+          "node_ip": "172.20.179.51"
+        },
+        "values": [
+          [
+            1781873340,
+            "1.06"
+          ],
+          [
+            1781873400,
+            "1.06"
+          ],
+          [
+            1781873460,
+            "1.01"
+          ],
+          [
+            1781873520,
+            "0.99"
+          ],
+          [
+            1781873580,
+            "0.96"
+          ],
+          [
+            1781873640,
+            "0.94"
+          ],
+          [
+            1781873700,
+            "0.94"
+          ],
+          [
+            1781873760,
+            "0.89"
+          ],
+          [
+            1781873820,
+            "1.01"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "node_load15",
+          "container": "node-exporter",
+          "endpoint": "metrics",
+          "instance": "172.20.237.164:9100",
+          "job": "node-exporter",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-prometheus-node-exporter-xxtgb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-prometheus-node-exporter",
+          "log_type": "k8s",
+          "node": "i-0d94ada325e8491c5",
+          "node_ip": "172.20.237.164"
+        },
+        "values": [
+          [
+            1781873340,
+            "0.24"
+          ],
+          [
+            1781873400,
+            "0.23"
+          ],
+          [
+            1781873460,
+            "0.22"
+          ],
+          [
+            1781873520,
+            "0.22"
+          ],
+          [
+            1781873580,
+            "0.22"
+          ],
+          [
+            1781873640,
+            "0.23"
+          ],
+          [
+            1781873700,
+            "0.21"
+          ],
+          [
+            1781873760,
+            "0.22"
+          ],
+          [
+            1781873820,
+            "0.21"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "node_load15",
+          "container": "node-exporter",
+          "endpoint": "metrics",
+          "instance": "172.20.50.13:9100",
+          "job": "node-exporter",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-prometheus-node-exporter-q29br",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-prometheus-node-exporter",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873280,
+            "0.15"
+          ],
+          [
+            1781873340,
+            "0.14"
+          ],
+          [
+            1781873400,
+            "0.13"
+          ],
+          [
+            1781873460,
+            "0.12"
+          ],
+          [
+            1781873520,
+            "0.11"
+          ],
+          [
+            1781873580,
+            "0.1"
+          ],
+          [
+            1781873640,
+            "0.09"
+          ],
+          [
+            1781873700,
+            "0.08"
+          ],
+          [
+            1781873760,
+            "0.09"
+          ],
+          [
+            1781873820,
+            "0.09"
+          ]
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "seriesFetched": "6",
+    "executionTimeMsec": 0
+  },
+  "metric_name": "node_load15"
+}

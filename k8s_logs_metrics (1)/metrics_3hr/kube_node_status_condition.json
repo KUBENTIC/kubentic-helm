@@ -1,0 +1,2488 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "DiskPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "DiskPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "DiskPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "DiskPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "DiskPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "DiskPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "DiskPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "DiskPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "DiskPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "MemoryPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "MemoryPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "MemoryPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "MemoryPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "MemoryPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "MemoryPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "MemoryPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "MemoryPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "MemoryPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "NetworkUnavailable",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "NetworkUnavailable",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "NetworkUnavailable",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "NetworkUnavailable",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "NetworkUnavailable",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "NetworkUnavailable",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "NetworkUnavailable",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "NetworkUnavailable",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "NetworkUnavailable",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "PIDPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "PIDPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "PIDPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "PIDPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "PIDPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "PIDPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "PIDPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "PIDPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "PIDPressure",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "Ready",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "Ready",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "Ready",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "Ready",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "Ready",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "Ready",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "Ready",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "false",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "Ready",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "true",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_node_status_condition",
+          "condition": "Ready",
+          "container": "kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "status": "unknown",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "seriesFetched": "90",
+    "executionTimeMsec": 0
+  },
+  "metric_name": "kube_node_status_condition"
+}

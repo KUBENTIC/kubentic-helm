@@ -1,0 +1,893 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "aws-node-termination-handler",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kube-system",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "cilium-operator",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kube-system",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "coredns",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kube-system",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "2"
+          ],
+          [
+            1781873400,
+            "2"
+          ],
+          [
+            1781873460,
+            "2"
+          ],
+          [
+            1781873520,
+            "2"
+          ],
+          [
+            1781873580,
+            "2"
+          ],
+          [
+            1781873640,
+            "2"
+          ],
+          [
+            1781873700,
+            "2"
+          ],
+          [
+            1781873760,
+            "2"
+          ],
+          [
+            1781873820,
+            "2"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "coredns-autoscaler",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kube-system",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "db",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "voting",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "application",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "ebs-csi-controller",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kube-system",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "kubentic-grafana",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "kubentic-kube-state-metrics",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "kubentic-operator",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "kubentic-victoria-metrics-operator",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "redis",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "voting",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "application",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "result",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "voting",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "application",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "vmagent-vmstack",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "vmsingle-vmstack",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "vote",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "voting",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "application",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "kube_deployment_spec_replicas",
+          "container": "kube-state-metrics",
+          "deployment": "worker",
+          "endpoint": "http",
+          "instance": "100.96.1.113:8080",
+          "job": "kube-state-metrics",
+          "namespace": "voting",
+          "pod": "kubentic-kube-state-metrics-84b958ff7-p2tr8",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-kube-state-metrics",
+          "log_type": "application",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873340,
+            "1"
+          ],
+          [
+            1781873400,
+            "1"
+          ],
+          [
+            1781873460,
+            "1"
+          ],
+          [
+            1781873520,
+            "1"
+          ],
+          [
+            1781873580,
+            "1"
+          ],
+          [
+            1781873640,
+            "1"
+          ],
+          [
+            1781873700,
+            "1"
+          ],
+          [
+            1781873760,
+            "1"
+          ],
+          [
+            1781873820,
+            "1"
+          ]
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "seriesFetched": "32",
+    "executionTimeMsec": 1
+  },
+  "metric_name": "kube_deployment_replicas"
+}

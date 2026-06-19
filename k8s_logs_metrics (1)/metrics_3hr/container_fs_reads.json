@@ -1,0 +1,3745 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "agent",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "ghcr.io/kubentic/agent:latest",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "test-4-x28ln",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "autoscaler",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/cpa/cluster-proportional-autoscaler@sha256:8f3b4e4beb62a9a5ad1ff96712129996e614d1fe7c57739c9816545ecea6f8b6",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "coredns-autoscaler-7fb47b485-5vvmn",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "aws-cloud-controller-manager",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/provider-aws/cloud-controller-manager@sha256:389f84eb8be523c1f3dc97b8e6cf48013a20f19e6c23dad7259ac26297b11940",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "aws-cloud-controller-manager-zg9mg",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "aws-node-termination-handler",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "public.ecr.aws/aws-ec2/aws-node-termination-handler@sha256:fc4b883511887a535a48c8918735be97c15f8f67c66e6aca869ec051091df6a5",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "aws-node-termination-handler-59c6c44fcd-2wmpv",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "cilium-agent",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "quay.io/cilium/cilium@sha256:42ec562a5ff6c8a860c0639f5a7611685e253fd9eb2d2fcdade693724c9166a4",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "cilium-mkclx",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "cilium-agent",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "quay.io/cilium/cilium@sha256:42ec562a5ff6c8a860c0639f5a7611685e253fd9eb2d2fcdade693724c9166a4",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "cilium-v2sbt",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "218.45333333333335"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "cilium-agent",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "quay.io/cilium/cilium@sha256:42ec562a5ff6c8a860c0639f5a7611685e253fd9eb2d2fcdade693724c9166a4",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "cilium-jlvc4",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "cilium-operator",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "quay.io/cilium/operator@sha256:0e8903aa092025918761d24ae9a91af35baa5b6910b5d0e3feac91ab8a2bc65b",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "cilium-operator-7bfb6c9c9d-2dlhj",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "60.681481481481484"
+          ],
+          [
+            1781873580,
+            "54.61333333333334"
+          ],
+          [
+            1781873640,
+            "54.61333333333334"
+          ],
+          [
+            1781873700,
+            "54.61333333333334"
+          ],
+          [
+            1781873760,
+            "54.61333333333334"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "config-reloader",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/victoriametrics/operator:config-reloader-v0.69.0",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "vmagent-vmstack-79cbcf4595-5jnr9",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "coredns",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/coredns/coredns@sha256:94caebb89dcfb9d2c4be45bfda34410a3e1092458fbbbc0284365c9e4c9a7818",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "coredns-5f977fddbc-gq9vj",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "60.681481481481484"
+          ],
+          [
+            1781873580,
+            "54.61333333333334"
+          ],
+          [
+            1781873640,
+            "54.61333333333334"
+          ],
+          [
+            1781873700,
+            "54.61333333333334"
+          ],
+          [
+            1781873760,
+            "54.61333333333334"
+          ],
+          [
+            1781873820,
+            "27.30666666666667"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "coredns",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/coredns/coredns@sha256:94caebb89dcfb9d2c4be45bfda34410a3e1092458fbbbc0284365c9e4c9a7818",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "coredns-5f977fddbc-5hxjs",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "csi-attacher",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/sig-storage/csi-attacher@sha256:5aaefc24f315b182233c8b6146077f8c32e274d864cb03c632206e78bd0302da",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-controller-79687fbb4f-swppk",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "csi-provisioner",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/sig-storage/csi-provisioner@sha256:bb057f866177d5f4139a1527e594499cbe0feeb67b63aaca8679dfdf0a6016f9",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-controller-79687fbb4f-swppk",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "csi-resizer",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/sig-storage/csi-resizer@sha256:5e7cbb63fd497fa913caa21fee1a69f727c220c6fa83c5f8bb0995e2ad73a474",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-controller-79687fbb4f-swppk",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "ebs-plugin",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/provider-aws/aws-ebs-csi-driver@sha256:8d51e59e7b9860f2090f2cd32f3b6ec354efb1f4b29c3455ff0361d03a334880",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-controller-79687fbb4f-swppk",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "ebs-plugin",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/provider-aws/aws-ebs-csi-driver@sha256:8d51e59e7b9860f2090f2cd32f3b6ec354efb1f4b29c3455ff0361d03a334880",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-rrljz",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "ebs-plugin",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/provider-aws/aws-ebs-csi-driver@sha256:8d51e59e7b9860f2090f2cd32f3b6ec354efb1f4b29c3455ff0361d03a334880",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-95znb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "56797.86666666667"
+          ],
+          [
+            1781873340,
+            "18932.62222222222"
+          ],
+          [
+            1781873400,
+            "11359.573333333334"
+          ],
+          [
+            1781873460,
+            "8113.980952380953"
+          ],
+          [
+            1781873520,
+            "6310.874074074074"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "436.9066666666667"
+          ],
+          [
+            1781873820,
+            "436.9066666666667"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "ebs-plugin",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/provider-aws/aws-ebs-csi-driver@sha256:8d51e59e7b9860f2090f2cd32f3b6ec354efb1f4b29c3455ff0361d03a334880",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-7xxn7",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "ebs-plugin",
+          "device": "/dev/nvme1n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/provider-aws/aws-ebs-csi-driver@sha256:8d51e59e7b9860f2090f2cd32f3b6ec354efb1f4b29c3455ff0361d03a334880",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-95znb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "ebs-plugin",
+          "device": "/dev/nvme1n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/provider-aws/aws-ebs-csi-driver@sha256:8d51e59e7b9860f2090f2cd32f3b6ec354efb1f4b29c3455ff0361d03a334880",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-7xxn7",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "ebs-plugin",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/provider-aws/aws-ebs-csi-driver@sha256:8d51e59e7b9860f2090f2cd32f3b6ec354efb1f4b29c3455ff0361d03a334880",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-95znb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "ebs-plugin",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/provider-aws/aws-ebs-csi-driver@sha256:8d51e59e7b9860f2090f2cd32f3b6ec354efb1f4b29c3455ff0361d03a334880",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-7xxn7",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "etcd-manager",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/etcd-manager/etcd-manager-slim@sha256:326c02a5c884c16148f4a1c7992c412db1e6f14ad04189e9a5cb36b0412eadd5",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "etcd-manager-events-i-0010bc1572a60c430",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "etcd-manager",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/etcd-manager/etcd-manager-slim@sha256:326c02a5c884c16148f4a1c7992c412db1e6f14ad04189e9a5cb36b0412eadd5",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "etcd-manager-main-i-0010bc1572a60c430",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "etcd-manager",
+          "device": "/dev/nvme1n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/etcd-manager/etcd-manager-slim@sha256:326c02a5c884c16148f4a1c7992c412db1e6f14ad04189e9a5cb36b0412eadd5",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "etcd-manager-events-i-0010bc1572a60c430",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "etcd-manager",
+          "device": "/dev/nvme2n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/etcd-manager/etcd-manager-slim@sha256:326c02a5c884c16148f4a1c7992c412db1e6f14ad04189e9a5cb36b0412eadd5",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "etcd-manager-main-i-0010bc1572a60c430",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "grafana",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/grafana/grafana:13.0.1",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-grafana-7bbf74d8d-svxft",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "9693.866666666667"
+          ],
+          [
+            1781873340,
+            "4915.2"
+          ],
+          [
+            1781873400,
+            "2949.12"
+          ],
+          [
+            1781873460,
+            "2165.0285714285715"
+          ],
+          [
+            1781873520,
+            "1699.0814814814814"
+          ],
+          [
+            1781873580,
+            "559.7866666666666"
+          ],
+          [
+            1781873640,
+            "54.61333333333334"
+          ],
+          [
+            1781873700,
+            "559.7866666666666"
+          ],
+          [
+            1781873760,
+            "518.8266666666667"
+          ],
+          [
+            1781873820,
+            "505.17333333333335"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "grafana-sc-dashboard",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "quay.io/kiwigrid/k8s-sidecar:2.7.1",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-grafana-7bbf74d8d-svxft",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "grafana-sc-datasources",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "quay.io/kiwigrid/k8s-sidecar:2.7.1",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-grafana-7bbf74d8d-svxft",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "healthcheck",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/kops/kube-apiserver-healthcheck@sha256:4d681c79b61928212b8fb5eb835381e54d32b840070ae661f8c26c1bd5a7b4a9",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kube-apiserver-i-0010bc1572a60c430",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "kops-controller",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/kops/kops-controller@sha256:05571b821ef2f0fee03fd0609c71e0a2a12978ae48bf93aeb6bd7b87888de0a6",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kops-controller-j2ljb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "kube-apiserver",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/kube-apiserver@sha256:011838b85f65454b95a013b2b902dd506789fd07f9abc84e52eb2b6a044cd392",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kube-apiserver-i-0010bc1572a60c430",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "kube-controller-manager",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/kube-controller-manager@sha256:9fb295baa9d68543d7bbecc23e16fcdf85c8c06680f91e628535aa6fbe180dbd",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kube-controller-manager-i-0010bc1572a60c430",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "kube-scheduler",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/kube-scheduler@sha256:fc251ed4b8a03830bb8f75fb5fe983b3b0b5cc15a9c066d8f6c5d2e547deece8",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kube-scheduler-i-0010bc1572a60c430",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "liveness-probe",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/sig-storage/livenessprobe@sha256:88092d100909918ae0a768956cf78c88bc59cd7232720f7cdbdfb5d2e235001e",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-95znb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "liveness-probe",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/sig-storage/livenessprobe@sha256:88092d100909918ae0a768956cf78c88bc59cd7232720f7cdbdfb5d2e235001e",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-7xxn7",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "manager",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "ghcr.io/kubentic/operator:latest",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-operator-6f8fdb4795-tqxpt",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "600.7466666666667"
+          ],
+          [
+            1781873460,
+            "429.1047619047619"
+          ],
+          [
+            1781873520,
+            "333.7481481481482"
+          ],
+          [
+            1781873580,
+            "559.7866666666666"
+          ],
+          [
+            1781873640,
+            "559.7866666666666"
+          ],
+          [
+            1781873700,
+            "259.41333333333336"
+          ],
+          [
+            1781873760,
+            "259.41333333333336"
+          ],
+          [
+            1781873820,
+            "259.41333333333336"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "node-driver-registrar",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/sig-storage/csi-node-driver-registrar@sha256:5244abbe87e01b35adeb8bb13882a74785df0c0619f8325c9e950395c3f72a97",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-rrljz",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "node-driver-registrar",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/sig-storage/csi-node-driver-registrar@sha256:5244abbe87e01b35adeb8bb13882a74785df0c0619f8325c9e950395c3f72a97",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-95znb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "node-driver-registrar",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "registry.k8s.io/sig-storage/csi-node-driver-registrar@sha256:5244abbe87e01b35adeb8bb13882a74785df0c0619f8325c9e950395c3f72a97",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kube-system",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "ebs-csi-node-7xxn7",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "node-exporter",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "quay.io/prometheus/node-exporter:v1.11.1",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-prometheus-node-exporter-jp6jt",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "8146.488888888889"
+          ],
+          [
+            1781873400,
+            "4887.893333333333"
+          ],
+          [
+            1781873460,
+            "3491.352380952381"
+          ],
+          [
+            1781873520,
+            "2715.4962962962964"
+          ],
+          [
+            1781873580,
+            "2771.6266666666666"
+          ],
+          [
+            1781873640,
+            "327.68"
+          ],
+          [
+            1781873700,
+            "327.68"
+          ],
+          [
+            1781873760,
+            "327.68"
+          ],
+          [
+            1781873820,
+            "327.68"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "node-exporter",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "quay.io/prometheus/node-exporter:v1.11.1",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-prometheus-node-exporter-xxtgb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "2002.4888888888888"
+          ],
+          [
+            1781873400,
+            "1201.4933333333333"
+          ],
+          [
+            1781873460,
+            "858.2095238095238"
+          ],
+          [
+            1781873520,
+            "667.4962962962964"
+          ],
+          [
+            1781873580,
+            "600.7466666666667"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "382.29333333333335"
+          ],
+          [
+            1781873820,
+            "382.29333333333335"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "operator",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/victoriametrics/operator:v0.69.0",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-victoria-metrics-operator-5f96779cb6-qjkx7",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "5870.933333333333"
+          ],
+          [
+            1781873340,
+            "1956.9777777777779"
+          ],
+          [
+            1781873400,
+            "1174.1866666666667"
+          ],
+          [
+            1781873460,
+            "838.7047619047619"
+          ],
+          [
+            1781873520,
+            "667.4962962962964"
+          ],
+          [
+            1781873580,
+            "13.653333333333334"
+          ],
+          [
+            1781873640,
+            "259.41333333333336"
+          ],
+          [
+            1781873700,
+            "259.41333333333336"
+          ],
+          [
+            1781873760,
+            "259.41333333333336"
+          ],
+          [
+            1781873820,
+            "682.6666666666666"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "postgres",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/library/postgres:15-alpine",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "voting",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "db-5f4b6959b4-5g67l",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "application"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "redis",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/library/redis:alpine",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "voting",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "redis-69f5974b5-mglsv",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "application"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vector",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/timberio/vector:0.39.0-alpine",
+          "instance": "i-0010bc1572a60c430",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0010bc1572a60c430",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0010bc1572a60c430",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-vector-lbz7l",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "9147.733333333334"
+          ],
+          [
+            1781873400,
+            "5488.64"
+          ],
+          [
+            1781873460,
+            "4544.609523809524"
+          ],
+          [
+            1781873520,
+            "3534.696296296296"
+          ],
+          [
+            1781873580,
+            "3181.2266666666665"
+          ],
+          [
+            1781873640,
+            "436.9066666666667"
+          ],
+          [
+            1781873700,
+            "436.9066666666667"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vector",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/timberio/vector:0.39.0-alpine",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-vector-pcs5f",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "354.9866666666667"
+          ],
+          [
+            1781873460,
+            "273.06666666666666"
+          ],
+          [
+            1781873520,
+            "212.38518518518518"
+          ],
+          [
+            1781873580,
+            "191.14666666666668"
+          ],
+          [
+            1781873640,
+            "191.14666666666668"
+          ],
+          [
+            1781873700,
+            "13.653333333333334"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vector",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/timberio/vector:0.39.0-alpine",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "kubentic-vector-m2zhn",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "34.13333333333333"
+          ],
+          [
+            1781873520,
+            "22.755555555555556"
+          ],
+          [
+            1781873580,
+            "17.066666666666666"
+          ],
+          [
+            1781873640,
+            "13.653333333333334"
+          ],
+          [
+            1781873700,
+            "13.653333333333334"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vlogs",
+          "device": "/dev/nvme1n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/victoriametrics/victoria-logs:v1.50.0",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "vlogs-server-0",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873520,
+            "2048"
+          ],
+          [
+            1781873580,
+            "1024"
+          ],
+          [
+            1781873640,
+            "2116.266666666667"
+          ],
+          [
+            1781873700,
+            "2150.4"
+          ],
+          [
+            1781873760,
+            "2170.88"
+          ],
+          [
+            1781873820,
+            "2867.2"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vlogs",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/victoriametrics/victoria-logs:v1.50.0",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "vlogs-server-0",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "1433.6"
+          ],
+          [
+            1781873460,
+            "1146.88"
+          ],
+          [
+            1781873520,
+            "1146.88"
+          ],
+          [
+            1781873580,
+            "1146.88"
+          ],
+          [
+            1781873640,
+            "1911.4666666666667"
+          ],
+          [
+            1781873700,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vmagent",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/victoriametrics/vmagent:v1.143.0",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "vmagent-vmstack-79cbcf4595-5jnr9",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "45.51111111111111"
+          ],
+          [
+            1781873520,
+            "34.13333333333333"
+          ],
+          [
+            1781873580,
+            "27.30666666666667"
+          ],
+          [
+            1781873640,
+            "27.30666666666667"
+          ],
+          [
+            1781873700,
+            "27.30666666666667"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vmsingle",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/victoriametrics/victoria-metrics:v1.143.0",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "vmsingle-vmstack-6fd779f668-5d8gm",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "887.4666666666667"
+          ],
+          [
+            1781873400,
+            "2867.2"
+          ],
+          [
+            1781873460,
+            "1911.4666666666667"
+          ],
+          [
+            1781873520,
+            "1433.6"
+          ],
+          [
+            1781873580,
+            "1146.88"
+          ],
+          [
+            1781873640,
+            "1146.88"
+          ],
+          [
+            1781873700,
+            "177.49333333333334"
+          ],
+          [
+            1781873760,
+            "177.49333333333334"
+          ],
+          [
+            1781873820,
+            "177.49333333333334"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vmsingle",
+          "device": "/dev/nvme1n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/victoriametrics/victoria-metrics:v1.143.0",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "vmsingle-vmstack-6fd779f668-5d8gm",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "500.6222222222222"
+          ],
+          [
+            1781873580,
+            "709.9733333333334"
+          ],
+          [
+            1781873640,
+            "799.6952380952381"
+          ],
+          [
+            1781873700,
+            "849.5407407407407"
+          ],
+          [
+            1781873760,
+            "1051.3066666666666"
+          ],
+          [
+            1781873820,
+            "1105.92"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vmsingle",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/victoriametrics/victoria-metrics:v1.143.0",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "kubentic-foresight",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "vmsingle-vmstack-6fd779f668-5d8gm",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "k8s"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "512"
+          ],
+          [
+            1781873460,
+            "512"
+          ],
+          [
+            1781873520,
+            "512"
+          ],
+          [
+            1781873580,
+            "512"
+          ],
+          [
+            1781873640,
+            "1024"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "vote",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/dockersamples/examplevotingapp_vote:latest",
+          "instance": "i-0ecec600693268f66",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0ecec600693268f66",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "voting",
+          "node": "i-0ecec600693268f66",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "vote-8f9979fc-5tjv2",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "application"
+        },
+        "values": [
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "beta_kubernetes_io_arch": "amd64",
+          "beta_kubernetes_io_instance_type": "t3.medium",
+          "beta_kubernetes_io_os": "linux",
+          "container": "worker",
+          "device": "/dev/nvme0n1",
+          "failure_domain_beta_kubernetes_io_region": "us-west-2",
+          "failure_domain_beta_kubernetes_io_zone": "us-west-2a",
+          "image": "docker.io/dockersamples/examplevotingapp_worker:latest",
+          "instance": "i-0d94ada325e8491c5",
+          "job": "kubelet",
+          "kubernetes_io_arch": "amd64",
+          "kubernetes_io_hostname": "i-0d94ada325e8491c5",
+          "kubernetes_io_os": "linux",
+          "metrics_path": "/metrics/cadvisor",
+          "namespace": "voting",
+          "node": "i-0d94ada325e8491c5",
+          "node_kubernetes_io_instance_type": "t3.medium",
+          "pod": "worker-d4d849f76-nnb9z",
+          "prometheus": "kubentic-foresight/vmstack",
+          "topology_ebs_csi_aws_com_zone": "us-west-2a",
+          "topology_k8s_aws_zone_id": "usw2-az2",
+          "topology_kubernetes_io_region": "us-west-2",
+          "topology_kubernetes_io_zone": "us-west-2a",
+          "log_type": "application"
+        },
+        "values": [
+          [
+            1781873280,
+            "0"
+          ],
+          [
+            1781873340,
+            "0"
+          ],
+          [
+            1781873400,
+            "0"
+          ],
+          [
+            1781873460,
+            "0"
+          ],
+          [
+            1781873520,
+            "0"
+          ],
+          [
+            1781873580,
+            "0"
+          ],
+          [
+            1781873640,
+            "0"
+          ],
+          [
+            1781873700,
+            "0"
+          ],
+          [
+            1781873760,
+            "0"
+          ],
+          [
+            1781873820,
+            "0"
+          ]
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "seriesFetched": "107",
+    "executionTimeMsec": 5
+  },
+  "metric_name": "container_fs_reads"
+}

@@ -1,0 +1,179 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "__name__": "node_memory_MemTotal_bytes",
+          "container": "node-exporter",
+          "endpoint": "metrics",
+          "instance": "172.20.179.51:9100",
+          "job": "node-exporter",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-prometheus-node-exporter-jp6jt",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-prometheus-node-exporter",
+          "log_type": "k8s",
+          "node": "i-0010bc1572a60c430",
+          "node_ip": "172.20.179.51"
+        },
+        "values": [
+          [
+            1781873340,
+            "4020445184"
+          ],
+          [
+            1781873400,
+            "4020445184"
+          ],
+          [
+            1781873460,
+            "4020445184"
+          ],
+          [
+            1781873520,
+            "4020445184"
+          ],
+          [
+            1781873580,
+            "4020445184"
+          ],
+          [
+            1781873640,
+            "4020445184"
+          ],
+          [
+            1781873700,
+            "4020445184"
+          ],
+          [
+            1781873760,
+            "4020445184"
+          ],
+          [
+            1781873820,
+            "4020445184"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "node_memory_MemTotal_bytes",
+          "container": "node-exporter",
+          "endpoint": "metrics",
+          "instance": "172.20.237.164:9100",
+          "job": "node-exporter",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-prometheus-node-exporter-xxtgb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-prometheus-node-exporter",
+          "log_type": "k8s",
+          "node": "i-0d94ada325e8491c5",
+          "node_ip": "172.20.237.164"
+        },
+        "values": [
+          [
+            1781873340,
+            "4020441088"
+          ],
+          [
+            1781873400,
+            "4020441088"
+          ],
+          [
+            1781873460,
+            "4020441088"
+          ],
+          [
+            1781873520,
+            "4020441088"
+          ],
+          [
+            1781873580,
+            "4020441088"
+          ],
+          [
+            1781873640,
+            "4020441088"
+          ],
+          [
+            1781873700,
+            "4020441088"
+          ],
+          [
+            1781873760,
+            "4020441088"
+          ],
+          [
+            1781873820,
+            "4020441088"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "__name__": "node_memory_MemTotal_bytes",
+          "container": "node-exporter",
+          "endpoint": "metrics",
+          "instance": "172.20.50.13:9100",
+          "job": "node-exporter",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-prometheus-node-exporter-q29br",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-prometheus-node-exporter",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873280,
+            "4020445184"
+          ],
+          [
+            1781873340,
+            "4020445184"
+          ],
+          [
+            1781873400,
+            "4020445184"
+          ],
+          [
+            1781873460,
+            "4020445184"
+          ],
+          [
+            1781873520,
+            "4020445184"
+          ],
+          [
+            1781873580,
+            "4020445184"
+          ],
+          [
+            1781873640,
+            "4020445184"
+          ],
+          [
+            1781873700,
+            "4020445184"
+          ],
+          [
+            1781873760,
+            "4020445184"
+          ],
+          [
+            1781873820,
+            "4020445184"
+          ]
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "seriesFetched": "6",
+    "executionTimeMsec": 0
+  },
+  "metric_name": "node_memory_total"
+}

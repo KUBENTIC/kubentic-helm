@@ -1,0 +1,12 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": []
+  },
+  "stats": {
+    "seriesFetched": "0",
+    "executionTimeMsec": 0
+  },
+  "metric_name": "container_network_receive"
+}

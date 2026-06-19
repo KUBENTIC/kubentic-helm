@@ -1,0 +1,10 @@
+2026-06-19T12:57:32.928494807Z 12:57:32 [INFO] ============================================================
+2026-06-19T12:57:32.928550615Z 12:57:32 [INFO] Kubentic Agent — cloud-agnostic collector
+2026-06-19T12:57:32.928673901Z 12:57:32 [INFO] Backend:  https://unintensified-vesta-dextrorse.ngrok-free.dev/pa/call
+2026-06-19T12:57:32.928680219Z 12:57:32 [INFO] VM URL:   http://vmsingle-vmstack.kubentic-foresight.svc:8428
+2026-06-19T12:57:32.928689077Z 12:57:32 [INFO] VL URL:   http://vlogs-server.kubentic-foresight.svc:9428
+2026-06-19T12:57:32.928755263Z 12:57:32 [INFO] ============================================================
+2026-06-19T12:57:32.932489602Z 12:57:32 [INFO] ============================================================
+2026-06-19T12:57:32.932583661Z 12:57:32 [INFO] Collecting Logs (last 3h + full restart history)
+2026-06-19T12:57:32.932589793Z 12:57:32 [INFO] ============================================================
+2026-06-19T12:57:33.332093589Z 12:57:33 [INFO] K8s fetch targets: 74  VictoriaLogs targets: 1

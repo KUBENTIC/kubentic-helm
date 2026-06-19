@@ -1,0 +1,176 @@
+{
+  "status": "success",
+  "data": {
+    "resultType": "matrix",
+    "result": [
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "metrics",
+          "instance": "172.20.179.51:9100",
+          "job": "node-exporter",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-prometheus-node-exporter-jp6jt",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-prometheus-node-exporter",
+          "log_type": "k8s",
+          "node": "i-0010bc1572a60c430",
+          "node_ip": "172.20.179.51"
+        },
+        "values": [
+          [
+            1781873340,
+            "2085216256"
+          ],
+          [
+            1781873400,
+            "2104725504"
+          ],
+          [
+            1781873460,
+            "2106748928"
+          ],
+          [
+            1781873520,
+            "2115305472"
+          ],
+          [
+            1781873580,
+            "2099015680"
+          ],
+          [
+            1781873640,
+            "2098167808"
+          ],
+          [
+            1781873700,
+            "2064019456"
+          ],
+          [
+            1781873760,
+            "2055204864"
+          ],
+          [
+            1781873820,
+            "2065588224"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "metrics",
+          "instance": "172.20.237.164:9100",
+          "job": "node-exporter",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-prometheus-node-exporter-xxtgb",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-prometheus-node-exporter",
+          "log_type": "k8s",
+          "node": "i-0d94ada325e8491c5",
+          "node_ip": "172.20.237.164"
+        },
+        "values": [
+          [
+            1781873340,
+            "1473933312"
+          ],
+          [
+            1781873400,
+            "1472770048"
+          ],
+          [
+            1781873460,
+            "1495109632"
+          ],
+          [
+            1781873520,
+            "1493803008"
+          ],
+          [
+            1781873580,
+            "1501720576"
+          ],
+          [
+            1781873640,
+            "1497243648"
+          ],
+          [
+            1781873700,
+            "1493295104"
+          ],
+          [
+            1781873760,
+            "1491636224"
+          ],
+          [
+            1781873820,
+            "1490305024"
+          ]
+        ]
+      },
+      {
+        "metric": {
+          "container": "node-exporter",
+          "endpoint": "metrics",
+          "instance": "172.20.50.13:9100",
+          "job": "node-exporter",
+          "namespace": "kubentic-foresight",
+          "pod": "kubentic-prometheus-node-exporter-q29br",
+          "prometheus": "kubentic-foresight/vmstack",
+          "service": "kubentic-prometheus-node-exporter",
+          "log_type": "k8s",
+          "node": "i-0ecec600693268f66",
+          "node_ip": "172.20.50.13"
+        },
+        "values": [
+          [
+            1781873280,
+            "1226932224"
+          ],
+          [
+            1781873340,
+            "1301573632"
+          ],
+          [
+            1781873400,
+            "1343344640"
+          ],
+          [
+            1781873460,
+            "1330884608"
+          ],
+          [
+            1781873520,
+            "1358086144"
+          ],
+          [
+            1781873580,
+            "1345081344"
+          ],
+          [
+            1781873640,
+            "1350914048"
+          ],
+          [
+            1781873700,
+            "1262555136"
+          ],
+          [
+            1781873760,
+            "1281503232"
+          ],
+          [
+            1781873820,
+            "1259204608"
+          ]
+        ]
+      }
+    ]
+  },
+  "stats": {
+    "seriesFetched": "12",
+    "executionTimeMsec": 1
+  },
+  "metric_name": "node_memory_used"
+}
