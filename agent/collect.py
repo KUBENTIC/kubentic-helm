@@ -400,7 +400,7 @@ def collect_logs(core_v1) -> Tuple[List[tuple], set]:
 
     for pod in pods.items:
         ns = pod.metadata.namespace
-        if ns in EXCLUDE_NAMESPACES:
+        if ns in EXCLUDE_NAMESPACES or ns == "kubentic-foresight":
             continue
         pod_name = pod.metadata.name
         phase = (pod.status.phase if pod.status else "Unknown") or "Unknown"
