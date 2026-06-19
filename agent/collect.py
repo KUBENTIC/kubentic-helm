@@ -41,6 +41,7 @@ import json
 import logging
 import os
 import random
+import re
 import ssl
 import sys
 import time
@@ -247,6 +248,8 @@ def fetch_single_log(core_v1, ns: str, pod_name: str, container: str,
     log_type = classify_namespace(ns)
     fname = (f"{log_type}_{ns}_{pod_name}_{container}_{suffix}.log"
              if suffix else f"{log_type}_{ns}_{pod_name}_{container}.log")
+    if re.match(r"^k8s_kubentic-foresight", fname):
+        return None
     fpath = LOGS_DIR / fname
     try:
         kwargs = dict(
@@ -371,7 +374,10 @@ async def collect_vl_historical(sem: asyncio.Semaphore, ns: str, pod: str,
     groups = _split_by_gaps(lines, num_historical)
     saved = 0
     for i, group in enumerate(groups):
-        fpath = LOGS_DIR / f"{log_type}_{ns}_{pod}_{container}_log{i}.log"
+        fname = f"{log_type}_{ns}_{pod}_{container}_log{i}.log"
+        if re.match(r"^k8s_kubentic-foresight", fname):
+            continue
+        fpath = LOGS_DIR / fname
         text = "\n".join(f"{_ns_to_iso(ts)} {line}" for ts, line in group)
         fpath.write_text(text + ("\n" if text else ""), encoding="utf-8")
         log.info("[VL] Saved %s (%d lines)", fpath.name, len(group))
@@ -500,7 +506,10 @@ async def collect_ghost_pods(live_pod_set: set) -> int:
 
     async def _fetch_ghost(ns, pod, container):
         log_type = classify_namespace(ns)
-        fpath = LOGS_DIR / f"{log_type}_{ns}_{pod}_{container}_terminated.log"
+        fname = f"{log_type}_{ns}_{pod}_{container}_terminated.log"
+        if re.match(r"^k8s_kubentic-foresight", fname):
+            return None
+        fpath = LOGS_DIR / fname
         async with sem:
             async with aiohttp.ClientSession() as session:
                 lines = await _vl_query_range(session, ns, pod, container, start_ns, now_ns)
@@ -532,6 +541,11 @@ async def _fetch_metric(session, sem: asyncio.Semaphore, name: str, params: dict
                 timeout=aiohttp.ClientTimeout(total=30),
             ) as resp:
                 data = json.loads(await resp.text())
+            if "data" in data and "result" in data["data"]:
+                data["data"]["result"] = [
+                    entry for entry in data["data"]["result"]
+                    if entry.get("metric", {}).get("namespace") != "kubentic-foresight"
+                ]
             for entry in data.get("data", {}).get("result", []):
                 metric = entry.get("metric", {})
                 ns = metric.get("namespace", "")
