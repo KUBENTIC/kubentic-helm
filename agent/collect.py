@@ -34,6 +34,7 @@ Environment variables (injected by the operator):
   VL_MAX_LINES            — max log lines per container from VL, default 100000
   METRICS_RANGE_SECONDS   — metrics query window, default 10800 (3h)
   METRICS_STEP            — metrics resolution step, default "60s"
+  COLLECT_INVENTORY       — "true"/"false", default true
 """
 
 import asyncio
@@ -76,6 +77,7 @@ EXCLUDE_NAMESPACES = set(
 )
 
 COLLECT_METRICS      = os.environ.get("COLLECT_METRICS", "true").lower() == "true"
+COLLECT_INVENTORY    = os.environ.get("COLLECT_INVENTORY", "true").lower() == "true"
 VICTORIA_METRICS_URL = os.environ.get("VICTORIA_METRICS_URL", "").rstrip("/")
 VICTORIA_LOGS_URL    = os.environ.get("VICTORIA_LOGS_URL", "").rstrip("/")
 VL_HISTORY_SECONDS   = int(os.environ.get("VL_HISTORY_SECONDS", str(7 * 24 * 3600)))
@@ -87,9 +89,10 @@ MAX_LOG_WORKERS        = LOG_CONCURRENCY
 MAX_METRIC_CONCURRENCY = 10
 VL_CONCURRENCY         = 5
 
-BASEDIR     = Path("/tmp/kubentic-collection")
-LOGS_DIR    = BASEDIR / "kubectl_logs_3hr"
-METRICS_DIR = BASEDIR / "metrics_3hr"
+BASEDIR        = Path("/tmp/kubentic-collection")
+LOGS_DIR       = BASEDIR / "kubectl_logs_3hr"
+METRICS_DIR    = BASEDIR / "metrics_3hr"
+INVENTORY_DIR  = BASEDIR / "cluster_inventory"
 
 # ─── Logging ──────────────────────────────────────────────────────────────────
 
@@ -652,7 +655,131 @@ def enrich_metrics(core_v1):
     log.info("Enriched %d metric files", enriched)
 
 
-# ─── 4) Zip & upload ──────────────────────────────────────────────────────────
+# ─── 4) Cluster inventory ────────────────────────────────────────────────────
+
+def collect_inventory(core_v1) -> Path:
+    """Snapshot of all namespaces and every pod (any phase) excluding kubentic-foresight."""
+    log.info("=" * 60)
+    log.info("Collecting Cluster Inventory (namespaces + pods)")
+    log.info("=" * 60)
+
+    INVENTORY_DIR.mkdir(parents=True, exist_ok=True)
+    excluded = EXCLUDE_NAMESPACES | {"kubentic-foresight"}
+
+    ns_items = core_v1.list_namespace(watch=False).items
+    namespaces = []
+    allowed_ns: set = set()
+    for ns in ns_items:
+        name = ns.metadata.name
+        if name in excluded:
+            continue
+        allowed_ns.add(name)
+        namespaces.append({
+            "name": name,
+            "status": (ns.status.phase if ns.status else "Unknown") or "Unknown",
+            "created_at": ns.metadata.creation_timestamp.strftime("%Y-%m-%dT%H:%M:%SZ") if ns.metadata.creation_timestamp else None,
+            "labels": dict(ns.metadata.labels or {}),
+        })
+
+    pods_raw = core_v1.list_pod_for_all_namespaces(watch=False).items
+    pods = []
+    for pod in pods_raw:
+        ns = pod.metadata.namespace
+        if ns not in allowed_ns:
+            continue
+
+        phase = (pod.status.phase if pod.status else "Unknown") or "Unknown"
+        conditions = {c.type: c.status for c in (pod.status.conditions or [])}
+
+        containers = []
+        all_cs = list(pod.status.container_statuses or []) + list(pod.status.init_container_statuses or [])
+        for cs in all_cs:
+            state_name, reason = "unknown", ""
+            if cs.state:
+                if cs.state.running:
+                    state_name = "running"
+                elif cs.state.waiting:
+                    state_name = "waiting"
+                    reason = cs.state.waiting.reason or ""
+                elif cs.state.terminated:
+                    state_name = "terminated"
+                    reason = cs.state.terminated.reason or ""
+            containers.append({
+                "name": cs.name,
+                "state": state_name,
+                "reason": reason,
+                "ready": cs.ready,
+                "restart_count": cs.restart_count or 0,
+            })
+
+        pods.append({
+            "namespace": ns,
+            "name": pod.metadata.name,
+            "phase": phase,
+            "node": pod.spec.node_name or "",
+            "pod_ip": (pod.status.pod_ip or "") if pod.status else "",
+            "created_at": pod.metadata.creation_timestamp.strftime("%Y-%m-%dT%H:%M:%SZ") if pod.metadata.creation_timestamp else None,
+            "ready": conditions.get("Ready", "False"),
+            "containers": containers,
+        })
+
+    inventory = {
+        "collected_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "namespace_count": len(namespaces),
+        "pod_count": len(pods),
+        "namespaces": namespaces,
+        "pods": pods,
+    }
+
+    inv_path = INVENTORY_DIR / "cluster_inventory.json"
+    inv_path.write_text(json.dumps(inventory, indent=2))
+    log.info("Inventory: %d namespace(s), %d pod(s)", len(namespaces), len(pods))
+
+    # ── Nodes (separate file) ─────────────────────────────────────────────────
+    nodes_raw = core_v1.list_node(watch=False).items
+    nodes = []
+    for node in nodes_raw:
+        conditions = {c.type: c.status for c in (node.status.conditions or [])}
+        ready = conditions.get("Ready", "Unknown")
+
+        info = node.status.node_info or {}
+        allocatable = {k: str(v) for k, v in (node.status.allocatable or {}).items()}
+        capacity    = {k: str(v) for k, v in (node.status.capacity or {}).items()}
+
+        addresses = {a.type: a.address for a in (node.status.addresses or [])}
+
+        nodes.append({
+            "name": node.metadata.name,
+            "ready": ready,
+            "roles": [
+                k.split("/", 1)[1]
+                for k in (node.metadata.labels or {})
+                if k.startswith("node-role.kubernetes.io/")
+            ],
+            "internal_ip": addresses.get("InternalIP", ""),
+            "external_ip": addresses.get("ExternalIP", ""),
+            "os": getattr(info, "os_image", ""),
+            "kernel": getattr(info, "kernel_version", ""),
+            "container_runtime": getattr(info, "container_runtime_version", ""),
+            "kubelet_version": getattr(info, "kubelet_version", ""),
+            "created_at": node.metadata.creation_timestamp.strftime("%Y-%m-%dT%H:%M:%SZ") if node.metadata.creation_timestamp else None,
+            "allocatable": allocatable,
+            "capacity": capacity,
+            "conditions": conditions,
+        })
+
+    nodes_path = INVENTORY_DIR / "nodes.json"
+    nodes_path.write_text(json.dumps({
+        "collected_at": datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
+        "node_count": len(nodes),
+        "nodes": nodes,
+    }, indent=2))
+    log.info("Nodes: %d collected", len(nodes))
+
+    return inv_path
+
+
+# ─── 5) Zip & upload ──────────────────────────────────────────────────────────
 
 def _write_metadata(stats: dict) -> Path:
     meta = {
@@ -674,7 +801,7 @@ async def zip_and_upload(meta_path: Optional[Path] = None):
     log.info("=" * 60)
     zip_path = BASEDIR / "k8s_logs_metrics.zip"
     with zipfile.ZipFile(zip_path, "w", zipfile.ZIP_DEFLATED) as zf:
-        for folder in [LOGS_DIR, METRICS_DIR]:
+        for folder in [LOGS_DIR, METRICS_DIR, INVENTORY_DIR]:
             if folder.exists():
                 for f in folder.iterdir():
                     if f.is_file():
@@ -743,8 +870,14 @@ async def main():
     if COLLECT_METRICS and metrics_count > 0:
         enrich_metrics(core_v1)
 
+    if COLLECT_INVENTORY:
+        collect_inventory(core_v1)
+
     elapsed = time.time() - t0
     all_logs = list(LOGS_DIR.glob("*.log")) if LOGS_DIR.exists() else []
+    inv_files = list(INVENTORY_DIR.glob("*.json")) if INVENTORY_DIR.exists() else []
+    nodes_file = INVENTORY_DIR / "nodes.json"
+    node_count = json.loads(nodes_file.read_text()).get("node_count", 0) if nodes_file.exists() else 0
     meta_path = _write_metadata({
         "total_elapsed_seconds": round(elapsed, 1),
         "total_log_files": len(all_logs),
@@ -753,6 +886,8 @@ async def main():
         "numbered_logs": sum(1 for f in all_logs if "_log" in f.stem),
         "ghost_terminated_logs": ghost_count,
         "metrics_files": metrics_count,
+        "inventory_files": len(inv_files),
+        "inventory_node_count": node_count,
     })
 
     await zip_and_upload(meta_path)
