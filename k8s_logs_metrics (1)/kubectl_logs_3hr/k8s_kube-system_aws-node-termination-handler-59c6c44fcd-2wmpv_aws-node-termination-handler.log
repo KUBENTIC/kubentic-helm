@@ -1,7 +1,0 @@
-2026-06-19T10:15:10.829172558Z {"level":"info","size":0,"drainable-events":0,"time":"2026-06-19T10:15:10Z","message":"event store statistics"}
-2026-06-19T10:45:10.828822568Z {"level":"info","size":0,"drainable-events":0,"time":"2026-06-19T10:45:10Z","message":"event store statistics"}
-2026-06-19T11:15:10.827989093Z {"level":"info","size":0,"drainable-events":0,"time":"2026-06-19T11:15:10Z","message":"event store statistics"}
-2026-06-19T11:45:10.828895569Z {"level":"info","time":"2026-06-19T11:45:10Z","message":"Garbage-collecting the interruption event store"}
-2026-06-19T11:45:10.829487897Z {"level":"info","size":0,"drainable-events":0,"time":"2026-06-19T11:45:10Z","message":"event store statistics"}
-2026-06-19T12:15:10.828001342Z {"level":"info","size":0,"drainable-events":0,"time":"2026-06-19T12:15:10Z","message":"event store statistics"}
-2026-06-19T12:45:10.828715251Z {"level":"info","size":0,"drainable-events":0,"time":"2026-06-19T12:45:10Z","message":"event store statistics"}

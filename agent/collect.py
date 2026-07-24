@@ -657,6 +657,28 @@ def enrich_metrics(core_v1):
 
 # ─── 4) Cluster inventory ────────────────────────────────────────────────────
 
+def _effective_pod_status(pod, phase: str, containers: list) -> str:
+    """Replicate kubectl's STATUS column: bubble up container-level errors over the raw phase."""
+    if pod.metadata.deletion_timestamp:
+        return "Terminating"
+
+    for ics in (pod.status.init_container_statuses or []):
+        if ics.state and ics.state.waiting and ics.state.waiting.reason:
+            return f"Init:{ics.state.waiting.reason}"
+        if ics.state and ics.state.terminated:
+            t = ics.state.terminated
+            if t.exit_code != 0:
+                return f"Init:{t.reason or 'Error'}"
+
+    for c in containers:
+        if c["state"] == "waiting" and c["reason"]:
+            return c["reason"]   # CreateContainerConfigError, ImagePullBackOff, ErrImagePull, etc.
+        if c["state"] == "terminated" and c["reason"] and c["reason"] != "Completed":
+            return c["reason"]   # OOMKilled, Error, RunContainerError, etc.
+
+    return phase
+
+
 def collect_inventory(core_v1) -> Path:
     """Snapshot of all namespaces and every pod (any phase) excluding kubentic-foresight."""
     log.info("=" * 60)
@@ -716,6 +738,7 @@ def collect_inventory(core_v1) -> Path:
             "namespace": ns,
             "name": pod.metadata.name,
             "phase": phase,
+            "status": _effective_pod_status(pod, phase, containers),
             "node": pod.spec.node_name or "",
             "pod_ip": (pod.status.pod_ip or "") if pod.status else "",
             "created_at": pod.metadata.creation_timestamp.strftime("%Y-%m-%dT%H:%M:%SZ") if pod.metadata.creation_timestamp else None,
