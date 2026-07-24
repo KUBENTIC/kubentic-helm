@@ -712,24 +712,34 @@ def collect_inventory(core_v1) -> Path:
 
         phase = (pod.status.phase if pod.status else "Unknown") or "Unknown"
         conditions = {c.type: c.status for c in (pod.status.conditions or [])}
+        condition_messages = {
+            c.type: c.message
+            for c in (pod.status.conditions or [])
+            if c.message
+        }
 
         containers = []
         all_cs = list(pod.status.container_statuses or []) + list(pod.status.init_container_statuses or [])
         for cs in all_cs:
-            state_name, reason = "unknown", ""
+            state_name, reason, message, exit_code = "unknown", "", "", None
             if cs.state:
                 if cs.state.running:
                     state_name = "running"
                 elif cs.state.waiting:
                     state_name = "waiting"
                     reason = cs.state.waiting.reason or ""
+                    message = cs.state.waiting.message or ""
                 elif cs.state.terminated:
                     state_name = "terminated"
                     reason = cs.state.terminated.reason or ""
+                    message = cs.state.terminated.message or ""
+                    exit_code = cs.state.terminated.exit_code
             containers.append({
                 "name": cs.name,
                 "state": state_name,
                 "reason": reason,
+                "message": message,
+                "exit_code": exit_code,
                 "ready": cs.ready,
                 "restart_count": cs.restart_count or 0,
             })
@@ -743,6 +753,7 @@ def collect_inventory(core_v1) -> Path:
             "pod_ip": (pod.status.pod_ip or "") if pod.status else "",
             "created_at": pod.metadata.creation_timestamp.strftime("%Y-%m-%dT%H:%M:%SZ") if pod.metadata.creation_timestamp else None,
             "ready": conditions.get("Ready", "False"),
+            "condition_messages": condition_messages,
             "containers": containers,
         })
 
