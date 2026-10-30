@@ -2,8 +2,28 @@ apiVersion: v1
 entries:
   kubentic-lifecycle:
   - apiVersion: v2
+    appVersion: 0.4.2
+    created: "2026-10-30T14:35:59.94693111Z"
+    description: Read-only agent that sends a Kubernetes cluster inventory to Kubentic
+      Lifecycle for upgrade and EOL checks.
+    digest: e4f5a0e9eb757a457ff730b7bc774f1b78b258c522683a46302f61fb0f7f5e6d
+    home: https://kubentic.ai
+    keywords:
+    - kubentic
+    - upgrades
+    - lifecycle
+    - inventory
+    maintainers:
+    - email: dev_ai@kodexolabs.com
+      name: Kubentic
+    name: kubentic-lifecycle
+    type: application
+    urls:
+    - https://helm.kubentic.ai/kubentic-lifecycle-0.4.2.tgz
+    version: 0.4.2
+  - apiVersion: v2
     appVersion: 0.4.1
-    created: "2026-10-30T07:21:23.321352129Z"
+    created: "2026-10-30T14:35:59.946584392Z"
     description: Read-only agent that sends a Kubernetes cluster inventory to Kubentic
       Lifecycle for upgrade and EOL checks.
     digest: f6a617188ddcbbe9c04701ce0c81fab1c9bb748862ada03e1a02e4ab25b62932
@@ -23,7 +43,7 @@ entries:
     version: 0.4.1
   - apiVersion: v2
     appVersion: 0.4.0
-    created: "2026-10-30T07:21:23.320768516Z"
+    created: "2026-10-30T14:35:59.946182051Z"
     description: Read-only agent that sends a Kubernetes cluster inventory to Kubentic
       Lifecycle for upgrade and EOL checks.
     digest: 76275ef6836f6acef0c6a6a3be1df43a23aa256f43a4c235e3b1b3c5be4ab10b
@@ -43,7 +63,7 @@ entries:
     version: 0.4.0
   - apiVersion: v2
     appVersion: 0.3.1
-    created: "2026-10-30T07:21:23.320246738Z"
+    created: "2026-10-30T14:35:59.945840721Z"
     description: Read-only agent that sends a Kubernetes cluster inventory to Kubentic
       Lifecycle for upgrade and EOL checks.
     digest: a1c3a9ba3206745f7bab186246aabf2473649c344926717f22eac3d294baeada
@@ -63,7 +83,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2026-10-30T07:21:23.319758724Z"
+    created: "2026-10-30T14:35:59.945488134Z"
     description: Read-only agent that sends a Kubernetes cluster inventory to Kubentic
       Lifecycle for upgrade and EOL checks.
     digest: 900a9423124bf913a5b4e574b381d12538b968a099f5ee369072616c5f3286e9
@@ -84,7 +104,7 @@ entries:
   kubentic-operator:
   - apiVersion: v2
     appVersion: 0.3.2
-    created: "2026-10-30T07:21:23.870007439Z"
+    created: "2026-10-30T14:36:00.39138214Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -111,7 +131,7 @@ entries:
     version: 0.3.2
   - apiVersion: v2
     appVersion: 0.3.1
-    created: "2026-10-30T07:21:23.841885777Z"
+    created: "2026-10-30T14:36:00.372075572Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -138,7 +158,7 @@ entries:
     version: 0.3.1
   - apiVersion: v2
     appVersion: 0.3.0
-    created: "2026-10-30T07:21:23.81872375Z"
+    created: "2026-10-30T14:36:00.348969798Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -165,7 +185,7 @@ entries:
     version: 0.3.0
   - apiVersion: v2
     appVersion: 0.2.9
-    created: "2026-10-30T07:21:23.794516362Z"
+    created: "2026-10-30T14:36:00.32888628Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -192,7 +212,7 @@ entries:
     version: 0.2.9
   - apiVersion: v2
     appVersion: 0.2.8
-    created: "2026-10-30T07:21:23.769025019Z"
+    created: "2026-10-30T14:36:00.305865432Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -219,7 +239,7 @@ entries:
     version: 0.2.8
   - apiVersion: v2
     appVersion: 0.2.7
-    created: "2026-10-30T07:21:23.74597467Z"
+    created: "2026-10-30T14:36:00.281943679Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -246,7 +266,7 @@ entries:
     version: 0.2.7
   - apiVersion: v2
     appVersion: 0.2.6
-    created: "2026-10-30T07:21:23.720193684Z"
+    created: "2026-10-30T14:36:00.259083712Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -273,7 +293,7 @@ entries:
     version: 0.2.6
   - apiVersion: v2
     appVersion: 0.2.5
-    created: "2026-10-30T07:21:23.6946266Z"
+    created: "2026-10-30T14:36:00.239417217Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -300,7 +320,7 @@ entries:
     version: 0.2.5
   - apiVersion: v2
     appVersion: 0.2.4
-    created: "2026-10-30T07:21:23.670383016Z"
+    created: "2026-10-30T14:36:00.219808958Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -327,7 +347,7 @@ entries:
     version: 0.2.4
   - apiVersion: v2
     appVersion: 0.2.3
-    created: "2026-10-30T07:21:23.645679809Z"
+    created: "2026-10-30T14:36:00.20008029Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -354,7 +374,7 @@ entries:
     version: 0.2.3
   - apiVersion: v2
     appVersion: 0.2.2
-    created: "2026-10-30T07:21:23.620276871Z"
+    created: "2026-10-30T14:36:00.177627231Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -381,7 +401,7 @@ entries:
     version: 0.2.2
   - apiVersion: v2
     appVersion: 0.2.1
-    created: "2026-10-30T07:21:23.596124026Z"
+    created: "2026-10-30T14:36:00.155609583Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -408,7 +428,7 @@ entries:
     version: 0.2.1
   - apiVersion: v2
     appVersion: 0.2.0
-    created: "2026-10-30T07:21:23.570231493Z"
+    created: "2026-10-30T14:36:00.136576114Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -435,7 +455,7 @@ entries:
     version: 0.2.0
   - apiVersion: v2
     appVersion: 0.1.9
-    created: "2026-10-30T07:21:23.545060229Z"
+    created: "2026-10-30T14:36:00.117722533Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -462,7 +482,7 @@ entries:
     version: 0.1.9
   - apiVersion: v2
     appVersion: 0.1.8
-    created: "2026-10-30T07:21:23.520275339Z"
+    created: "2026-10-30T14:36:00.09754894Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -489,7 +509,7 @@ entries:
     version: 0.1.8
   - apiVersion: v2
     appVersion: 0.1.7
-    created: "2026-10-30T07:21:23.495466445Z"
+    created: "2026-10-30T14:36:00.076963812Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -516,7 +536,7 @@ entries:
     version: 0.1.7
   - apiVersion: v2
     appVersion: 0.1.6
-    created: "2026-10-30T07:21:23.464836675Z"
+    created: "2026-10-30T14:36:00.057786288Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -543,7 +563,7 @@ entries:
     version: 0.1.6
   - apiVersion: v2
     appVersion: 0.1.5
-    created: "2026-10-30T07:21:23.425151207Z"
+    created: "2026-10-30T14:36:00.036521474Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -570,7 +590,7 @@ entries:
     version: 0.1.5
   - apiVersion: v2
     appVersion: 0.1.4
-    created: "2026-10-30T07:21:23.400052871Z"
+    created: "2026-10-30T14:36:00.012908452Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -597,7 +617,7 @@ entries:
     version: 0.1.4
   - apiVersion: v2
     appVersion: 0.1.3
-    created: "2026-10-30T07:21:23.374145898Z"
+    created: "2026-10-30T14:35:59.993686591Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -624,7 +644,7 @@ entries:
     version: 0.1.3
   - apiVersion: v2
     appVersion: 0.1.2
-    created: "2026-10-30T07:21:23.349826411Z"
+    created: "2026-10-30T14:35:59.970443131Z"
     dependencies:
     - name: victoria-metrics-k8s-stack
       repository: https://victoriametrics.github.io/helm-charts/
@@ -649,4 +669,4 @@ entries:
     urls:
     - https://helm.kubentic.ai/kubentic-operator-0.1.2.tgz
     version: 0.1.2
-generated: "2026-10-30T07:21:23.319204926Z"
+generated: "2026-10-30T14:35:59.944969469Z"
